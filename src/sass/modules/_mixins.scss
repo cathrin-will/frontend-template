@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+@mixin hoverActiveFocus {
+	&:hover, &:active, &:focus { @content; }
+}
+
+$old-ie: false !default;
+$fix-mqs: false !default;
+
+@mixin old-ie {
+	@if $old-ie { @content; } // Only use this content if we're dealing with old IE
+}
+
+@mixin columns($cols: 2, $gap: .5em, $fallback: true) {
+	@include vendor(column-count, $cols);
+	@include vendor(column-gap, $gap);
+	@if $fallback {
+		.no-csscolumns & > * { // old browsers get floats (so the order is changed), which is fine
+			float: left;
+			width: 100% / $cols;
+			padding-right: $gap;
+		}
+	}
+}
+
+//   @include opacity(0.8);
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
