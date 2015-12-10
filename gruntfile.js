@@ -85,6 +85,15 @@ module.exports = function(grunt) {
 				tasks: ['sass', 'postcss']
 			}
 		},
+		modernizr: {
+			dist: {
+				'devFile' : 'src/js/vendor/modernizr-dev-3-beta.js',
+				'outputFile' : 'dist/js/modernizr-custom.min.js',
+				'files' : {
+					'src': ['dist/css/**/*.css','dist/js/main.min.js']
+				}
+			}
+		},
 		copy: {
 			fonts: {
 				nonull: true,
@@ -104,14 +113,20 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['min','sass','postcss','jshint', 'copy']); // Default task(s)
+	// runs everything but watch, bower and modernizr
+	grunt.registerTask('default', ['sass','postcss','copy','imagemin','tinypng','min']); // Default task(s)
+	// runs everything but watch
+	grunt.registerTask('all', ['sass','postcss','modernizr', 'copy','imagemin','tinypng','min','jshint']);
+	// runs all image minifiers
 	grunt.registerTask('images', ['imagemin','tinypng']);
+	// create finished css
 	grunt.registerTask('sassy', ['sass', 'postcss']);
 
 	grunt.loadNpmTasks('grunt-yui-compressor');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-modernizr');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-tinypng');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
