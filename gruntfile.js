@@ -27,6 +27,35 @@ module.exports = function(grunt) {
 				},
 			}
 		},
+		postcss: {
+			options: {
+				map: true,
+				processors: [
+					require('autoprefixer-core')({browsers: 'last 1 version'}),
+					require('csswring')
+				]
+			},
+			files: {
+				expand: true,
+				cwd: 'dist/css/',
+				src: ['**/*.css'],
+				dest: 'dist/css/'
+			}
+		},
+		css_mqpacker: {
+			options: {
+				map: {
+					inline: false,
+					sourcesContent: false
+				}
+			},
+			main: {
+				expand: true,
+				cwd: 'dist/css/',
+				src: ['**/*.css'],
+				dest: 'dist/css/'
+			}
+		},
 		tinypng: {
 			options: {
 				apiKey: 'fzeWdn5xkPkiOXTmhRDaZ9DLvKvp7wnn',
@@ -54,21 +83,7 @@ module.exports = function(grunt) {
 				dest: 'dist/img/'
 			}
 		},
-		postcss: {
-			options: {
-				map: true,
-				processors: [
-					require('autoprefixer-core')({browsers: 'last 1 version'}),
-					require('csswring')
-				]
-			},
-			files: {
-				expand: true,
-				cwd: 'dist/css/',
-				src: ['**/*.css'],
-				dest: 'dist/css/'
-			}
-		},
+
 		watch: {
 			scripts: {
 				files: ['src/js/**/*.js'],
@@ -82,13 +97,13 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['src/sass/**/*.scss'],
-				tasks: ['sass', 'postcss']
+				tasks: ['sass', 'postcss','css_mqpacker']
 			}
 		},
 		modernizr: {
 			dist: {
 				'devFile' : 'src/js/vendor/modernizr-dev-3-beta.js',
-				'outputFile' : 'dist/js/modernizr-custom.min.js',
+				'outputFile' : 'dist/js/vendor/modernizr-custom.min.js',
 				'files' : {
 					'src': ['dist/css/**/*.css','dist/js/main.min.js']
 				}
@@ -114,13 +129,13 @@ module.exports = function(grunt) {
 	});
 
 	// runs everything but watch, bower and modernizr
-	grunt.registerTask('default', ['sass','postcss','copy','imagemin','tinypng','min']); // Default task(s)
+	grunt.registerTask('default', ['sass','postcss','css_mqpacker','copy','imagemin','tinypng','min']); // Default task(s)
 	// runs everything but watch
-	grunt.registerTask('all', ['sass','postcss','modernizr', 'copy','imagemin','tinypng','min','jshint']);
+	grunt.registerTask('all', ['sass','postcss','css_mqpacker','modernizr', 'copy','imagemin','tinypng','min','jshint']);
 	// runs all image minifiers
 	grunt.registerTask('images', ['imagemin','tinypng']);
 	// create finished css
-	grunt.registerTask('sassy', ['sass', 'postcss']);
+	grunt.registerTask('sassy', ['sass', 'postcss','css_mqpacker']);
 
 	grunt.loadNpmTasks('grunt-yui-compressor');
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -131,4 +146,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-tinypng');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks("css-mqpacker");
 };

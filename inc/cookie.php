@@ -1,5 +1,5 @@
 <!--[if lte IE 8]>
-	<div id="outdated-browser" class="wrapper outdated-browser">
+	<div id="outdated-browser" class="wrapper outdated-browser  soft-half">
 		<div class="grid-wrapper">
 			<div class="grid">
 				<div class="grid__item one-whole  lap-and-up-seven-eighths">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 <![endif]-->
-<div id="cookie" class="wrapper  wrapper--cookie">
+<div id="cookie" class="wrapper  wrapper--cookie  soft-half">
 	<div class="grid-wrapper">
 		<div class="grid grid--middle">
 			<div class="grid__item one-whole  lap-and-up-seven-eighths">

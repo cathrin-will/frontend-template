@@ -10,6 +10,18 @@
 					<p class="greybox">1</p>
 				</div><!--
 
+			 --><div class="grid__item one-whole  lap-one-half  desk-one-quarter">
+					<p class="greybox">1</p>
+				</div><!--
+
+			 --><div class="grid__item one-whole  lap-one-half  desk-one-quarter">
+					<p class="greybox">1</p>
+				</div><!--
+
+			 --><div class="grid__item one-whole  lap-one-half  desk-one-quarter">
+					<p class="greybox">1</p>
+				</div><!--
+
 			 --><div class="grid__item one-half">
 					<p class="greybox">2</p>
 				</div><!--
