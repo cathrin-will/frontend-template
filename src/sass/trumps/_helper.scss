@@ -1,0 +1,79 @@
+/*------------------------------------*\
+	$HELPERS
+\*------------------------------------*/
+
+.center {
+	margin: 0 auto;
+	display: table; // trying something out
+}
+
+.v-center {
+	display: flex!important;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: 0;
+}
+
+.block { display: block!important; }
+.hidden {
+	display: none!important;
+	position: absolute;
+}
+
+// this hides content visually but not from screenreaders
+.visuallyhidden {
+	border: 0!important;
+	clip: rect(0 0 0 0)!important;
+	height: 1px!important;
+	margin: -1px!important;
+	overflow: hidden!important;
+	padding: 0!important;
+	position: absolute!important;
+	width: 1px!important;
+}
+
+@each $state in palm, lap, lap-and-up, portable, desk {
+	@include media-query(#{$state}) {
+		.hidden-#{$state} {
+			display: none!important;
+			position: absolute;
+		}
+		.visuallyhidden-#{$state} {
+			border: 0!important;
+			clip: rect(0 0 0 0)!important;
+			height: 1px!important;
+			margin: -1px!important;
+			overflow: hidden!important;
+			padding: 0!important;
+			position: absolute!important;
+			width: 1px!important;
+		}
+		.text--center-#{$state} {
+			text-align: center!important;
+		}
+	}
+}
+
+.table {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.table__cell {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.overlay {
+	display: none;
+	background: rgba(0,0,0, .5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 500;
+}
+

@@ -1,4 +1,4 @@
-# PIP website
+# Frontend website
 
 > Strapline
 ## What you"ll need to have installed
@@ -20,3 +20,6 @@ Once you have the relevant things installed you will have to run
 ```bash
   grunt all
 ```
+
+## Browser Support
+*

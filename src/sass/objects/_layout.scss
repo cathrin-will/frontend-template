@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+
+.wrapper {
+	padding: $inuit-base-spacing-unit;
+	@include media-query(lap) { padding: $inuit-base-spacing-unit; }
+	@include media-query(desk) { padding: $inuit-base-spacing-unit; }
+}
+@include media-query(portable) {
+	.wrapper--flush-portable {
+		padding-left: 0!important;
+		padding-right: 0!important;
+		padding-top: 0!important;
+	}
+}
+
+// this seems complicated but it's pretty simple wrapper next wrapper has just one lot padding distance..
+// a wrapper next to different coloured wrapper has the two paddings
+// and of course footer/header don't count
+.wrapper:not([class*=" bg--"])+.wrapper:not([class*=" bg--"]):not(footer):not(header) {
+	padding-top: 0;
+}
+
+.layout-wrapper {
+	max-width: $layout-max;
+	margin: 0 auto;
+}
+
+/// creates popular classics such as u-1/1 and u-1/2
+// in settings/vars the you can choose the exact columns you need e.g u- 1/2 u-1/3 u-1/4
+@include inuit-widths($inuit-widths-columns-responsive);
+
+
+.layout--middle {
+	.layout__item {
+		vertical-align: middle;
+	}
+}
+
+.layout--bottom {
+	.layout__item {
+		vertical-align: bottom;
+	}
+}

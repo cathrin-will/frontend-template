@@ -1,0 +1,46 @@
+/*------------------------------------*\
+	$COLORS
+\*------------------------------------*/
+
+// main Colors
+$selection-color: 		#a0d6b4;
+$link-color:			#5f9ea0;
+
+// greys
+$light-grey:		#b0b1a6;
+$dark-grey:			#666;
+$mid-grey:			#999;
+
+// standard
+$text-grey: 		#515151;
+$charcoal:			#404041;
+
+// Social colors
+$social-twitter:	#55acee; // directly from brand guidelines
+$social-youtube:	#e52d27; // directly from brand guidelines
+$social-gplus:		#dd4b39; // directly from brand guidelines
+$social-facebook:	#3b5998;
+$social-linkedin:	#007bb6;
+$social-instagram:	#517fa4;
+$social-pinterest:	#cb2027;
+$social-blogger:	#FF8833;
+
+/*------------------------------------*\
+	$DIMENSIONS
+\*------------------------------------*/
+
+$layout-max: 		1200px;
+$palm:				"screen and (max-width: 44.9375em)";
+$lap:				"screen and (min-width: 45em) and (max-width: 63.9375em)";
+$lap-and-up:		"screen and (min-width: 45em)";
+$portable:			"screen and (max-width: 63.9375em)";
+$desk:				"screen and (min-width: 64em)";
+$retina:			"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)";
+
+/*------------------------------------*\
+	$MISC
+\*------------------------------------*/
+
+// CSS transitions
+$anim-speed:		.25s;
+$anim-speed-slow:	.33s;

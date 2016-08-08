@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				'report' : 'min'
 			},
 			files: {
-				src: [ 'src/js/plugins/*.js','src/js/main.js' ],
+				src: [ 'src/js/base/vendor/*.js','src/js/base/plugins/*.js','src/js/main.js' ],
 				dest: 'dist/js/main.min.js',
 				flatten: true,
 				ext: '.min.js'
@@ -83,32 +83,6 @@ module.exports = function(grunt) {
 				dest: 'dist/img/'
 			}
 		},
-
-		watch: {
-			scripts: {
-				files: ['src/js/**/*.js'],
-				tasks: ['min'],
-				options: { nospawn: true }
-			},
-			lint: {
-				files: ['src/js/main.js'], // don't need to lint plugins
-				tasks: ['jshint'],
-				options: { nospawn: true }
-			},
-			css: {
-				files: ['src/sass/**/*.scss'],
-				tasks: ['sass', 'postcss','css_mqpacker']
-			}
-		},
-		modernizr: {
-			dist: {
-				'devFile' : 'src/js/vendor/modernizr-dev-3-beta.js',
-				'outputFile' : 'dist/js/vendor/modernizr-custom.min.js',
-				'files' : {
-					'src': ['dist/css/**/*.css','dist/js/main.min.js']
-				}
-			}
-		},
 		copy: {
 			fonts: {
 				nonull: true,
@@ -124,14 +98,46 @@ module.exports = function(grunt) {
 				src: ['jquery**'],
 				dest: 'dist/js/vendor/'
 			},
-
+		},
+		watch: {
+			scripts: {
+				files: ['src/js/**/*.js'],
+				tasks: ['min'],
+				options: { nospawn: true }
+			},
+			lint: {
+				files: ['src/js/main.js'], // don't need to lint plugins
+				tasks: ['jshint'],
+				options: { nospawn: true }
+			},
+			css: {
+				files: ['src/sass/**/*.scss'],
+				tasks: ['sass','css_mqpacker','postcss']
+			},
+			copy: {
+				files: ['src/js/vendor/','src/fonts/'],
+				tasks: ['copy']
+			},
+			images: {
+				files: ['src/img/'],
+				tasks: ['imagemin','tinypng']
+			}
+		},
+		modernizr: {
+			dist: {
+				'devFile' : 'src/js/vendor/modernizr-custom.js',
+				'outputFile' : 'dist/js/vendor/modernizr-custom.min.js',
+				'files' : {
+					'src': ['dist/css/**/*.css','dist/js/main.min.js']
+				}
+			}
 		}
 	});
 
 	// runs everything but watch, bower and modernizr
-	grunt.registerTask('default', ['sass','postcss','css_mqpacker','copy','imagemin','tinypng','min']); // Default task(s)
+	grunt.registerTask('default', ['sass','css_mqpacker','postcss','copy','imagemin','tinypng','min']); // Default task(s)
 	// runs everything but watch
-	grunt.registerTask('all', ['sass','postcss','css_mqpacker','modernizr', 'copy','imagemin','tinypng','min','jshint']);
+	grunt.registerTask('all', ['sass','css_mqpacker','postcss','modernizr', 'copy','imagemin','tinypng','min','jshint']);
 	// runs all image minifiers
 	grunt.registerTask('images', ['imagemin','tinypng']);
 	// create finished css

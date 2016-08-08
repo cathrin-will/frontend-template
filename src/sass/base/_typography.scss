@@ -1,0 +1,67 @@
+// /*------------------------------------*\
+//     $TYPOGRAPHY
+// \*------------------------------------*/
+
+body {
+	font-size: 16px;
+	font-family: $helvetica;
+	color: $charcoal;
+}
+
+a {
+	color: $link-color;
+	transition: $anim-speed;
+	text-decoration: none;
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+		color: darken($link-color, 10%);
+	}
+}
+p a {
+	text-decoration: underlin;
+}
+
+strong {
+	font-weight: $bold;
+}
+
+h1,h2,h3,h4,h5,h6,
+.alpha,
+.beta,
+.gamma {
+	font-weight: $normal;
+}
+
+// font size mixin can be found in tools/mixins.scss
+// font sizes are declared in settings/font-vars.scss
+h1,.alpha {
+	font-size: 1.875rem;
+	font-weight: $bold;
+}
+
+h2,.beta {
+	font-size: 1.25rem;
+	font-weight: $bold;
+}
+
+h3,.gamma {
+	font-size: 1.25rem;
+}
+
+h4, .delta {
+	font-size: 1.125em;
+	font-weight: $bold;
+}
+
+h5, .echo {
+	font-size: 1.125em;
+}
+
+// h6, .zeta {
+// }
+
+p {
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

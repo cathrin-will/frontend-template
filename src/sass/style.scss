@@ -2,11 +2,59 @@
 /*------------------------------------*\
     $STYLES
 \*------------------------------------*/
-@import "vars";
-@import "modules/mixins";
-@import "inuit/inuit";
-@import "modules/general";
-@import "modules/header";
-@import "modules/buttons";
-@import "modules/fonts";
-@import "modules/helper";
+
+// Settings: Global variables, site-wide settings, config switches, etc.
+@import "../../node_modules/inuit-defaults/settings.defaults";
+@import "../../node_modules/inuit-responsive-settings/_settings.responsive";
+@import "settings/vars";
+@import "settings/font-vars";
+@import "settings/inuit-vars";
+
+
+// Tools: Site-wide mixins and functions
+@import "../../node_modules/inuit-functions/tools.functions";
+@import "../../node_modules/inuit-responsive-tools/_tools.responsive";
+@import "../../node_modules/inuit-mixins/tools.mixins";
+@import "../../node_modules/inuit-tools-widths/_tools.widths";
+@import "tools/mixins";
+@import "tools/animations";
+
+// Generic: Low-specificity, far-reaching rulesets (e.g. resets).
+@import "../../node_modules/inuit-normalize/generic.normalize";
+@import "../../node_modules/inuit-box-sizing/generic.box-sizing";
+@import "generic/general";
+
+// Base: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+@import "../../node_modules/inuit-page/base.page";
+@import "base/typography";	// - h1-h6, a, p
+@import "base/form"; // basic form css
+@import "base/hr"; // horisontal rule
+@import "base/images"; // basic image css
+
+// Objects: Objects, abstractions, and design patterns (e.g. .media {}).
+@import "../../node_modules/inuit-layout/objects.layout";
+@import "objects/layout"; 		// wrapper padding, max grid, non reposive columns
+@import "objects/buttons";		// buttons styles
+@import "objects/lists"; 		// list styles
+@import "objects/island"; 		// boxes
+@import "objects/media"; 		// includes flexbox media-row
+@import "objects/form"; 		// form classes
+@import "objects/typography"; 	// specific styles + helper classes
+@import "objects/images"; 		// image helper classes
+@import "objects/table";		//data tables
+
+// Components: Discrete, complete chunks of UI (e.g. .carousel {}). This is the one layer that inuitcss doesn’t get involved with.
+@import "components/cookie";		// cookie bar
+@import "components/header";		// nav not included here this is more how the bits inside come together
+@import "components/footer";		// footer speicifc styles
+@import "components/nav";			// any navs including the main one
+@import "components/burger"; 		// nav burger menu: ;
+
+
+// Trumps: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
+@import "../../node_modules/inuit-responsive-widths/_trumps.widths-responsive";
+@import "../../node_modules/inuit-spacing/_trumps.spacing";
+@import "../../node_modules/inuit-responsive-spacing/_trumps.spacing-responsive";
+@import "trumps/helper"; // includes text aligns, colours, js/no-js hide shows
+
+

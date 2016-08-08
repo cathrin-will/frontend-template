@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    $GENERAL
+\*------------------------------------*/
+
+::-moz-selection {
+	background: $selection-color;
+	color: #fff;
+	text-shadow: none;
+}
+
+::selection {
+	background: $selection-color;
+	color: #fff;
+	text-shadow: none;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	// transform: translate3d(0,0,0);
+	height: 100%;
+}
+
+iframe {
+	border: 0;
+	max-width: 100%;
+}
+

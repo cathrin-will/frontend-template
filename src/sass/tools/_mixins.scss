@@ -1,0 +1,49 @@
+/*------------------------------------*\
+	$MIXINS
+\*------------------------------------*/
+
+$old-ie: false !default;
+$fix-mqs: false !default;
+
+@mixin old-ie {
+	@if $old-ie { @content; } // Only use this content if we're dealing with old IE
+}
+
+
+@mixin columns($cols: 2, $gap: .5em, $fallback: true) {
+	@include vendor(column-count, $cols);
+	@include vendor(column-gap, $gap);
+	@if $fallback {
+		.no-csscolumns & > * { // old browsers get floats (so the order is changed), which is fine
+			float: left;
+			width: 100% / $cols;
+			padding-right: $gap;
+		}
+	}
+}
+
+// this mixin makes use of inuit font sizes in node_modules/inuit-mixins/tools.mixins
+// use with @include font-size($p-font-sizes);
+// font sizes are declared in settings/font-vars.scss
+@mixin font-size($fs-map) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			@if (length($fs-font-size) > 1) {
+				@include inuit-font-size(nth($fs-font-size, 1), nth($fs-font-size, 2));
+			}
+			@else {
+				@include inuit-font-size(nth($fs-font-size, 1));
+			}
+		}
+		@else {
+			@media #{$fs-breakpoint} {
+				@if (length($fs-font-size) > 1) {
+					@include inuit-font-size(nth($fs-font-size, 1), nth($fs-font-size, 2));
+				}
+				@else {
+					@include inuit-font-size(nth($fs-font-size, 1));
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+/*------------------------------------*\
+	$FORM - BASE
+\*------------------------------------*/
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button,
+textarea {
+	outline: 0;
+	border: 0;
+	vertical-align: middle;
+	&:focus {
+		outline: 0; // outline will have no border-radius
+		border-color: #4d90fe !important; // these look like chromes default focus styles
+		box-shadow: 0 0 10px #4d90fe;
+	}
+}
+
+textarea {
+	resize: vertical;
+	min-height: $inuit-base-spacing-unit*6;
+}

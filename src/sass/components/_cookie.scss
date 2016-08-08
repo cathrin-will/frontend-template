@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $COOKIE
+\*------------------------------------*/
+.cookie {
+	background: rgba($charcoal, .9);
+	color: #fff;
+	font-size: 0.9rem;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	display: none;
+	z-index: 9999;
+	.no-js & {
+		display: block;
+	}
+	a {
+		color: #fff;
+		text-decoration: underline;
+		&:hover, &:active, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+.cookie__close {
+	background: #fff;
+	border-radius: 50%;
+	color: $charcoal;
+	font-size: 2rem;
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	opacity: .8;
+	transition: $anim-speed;
+	&:hover, &:active, &:focus {
+		opacity: 1;
+	}
+	@include media-query(lap-and-up) {
+		font-size: 1.5rem;
+		position: absolute;
+		top: 0;
+		right: $inuit-base-spacing-unit;
+	}
+}
+
+
+
