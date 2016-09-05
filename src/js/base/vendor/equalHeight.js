@@ -1,7 +1,7 @@
 /*------------------------------------*\
 	Equal heights
 \*------------------------------------*/
-	function equalheights() {
+	function equalHeights() {
 		$(window).load(function() {
 			equalheight('.js-equal-height');
 		});
