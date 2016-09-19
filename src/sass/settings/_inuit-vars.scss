@@ -40,25 +40,25 @@ $inuit-layout-gutter: 			$inuit-base-spacing-unit;
 /// these create class names such as u-1/2 u-1/3
 $inuit-widths-columns-responsive: (
 	// 1,
-	2,
+	// 2,
 	// 3,
 	// 4,
 	// 5,
 	// 6,
 	// 7,
-	8
+	// 8
 );
 
 // these also have small, tiny, large and huge versions e.g $inuit-margin--small: true;
 // (m|p)(t|r|b|l|h|v)(-|+|0) {}` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none
 // class names u-mb (unit-marginbottom)
 // class names u-mt (unit-margintop)
-$inuit-enable-margins:					true;
+$inuit-enable-margins:					false;
 $inuit-enable-margins--tiny:			false;
-$inuit-enable-margins--small:			true;
+$inuit-enable-margins--small:			false;
 $inuit-enable-margins--negative-huge:	false;
 $inuit-enable-margins--large:			false;
-$inuit-enable-margins--none:			true;
+$inuit-enable-margins--none:			false;
 
 $inuit-enable-paddings:					false;
 $inuit-enable-paddings--tiny:			false;
