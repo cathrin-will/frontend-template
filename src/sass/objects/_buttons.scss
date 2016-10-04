@@ -17,14 +17,12 @@
 	cursor: pointer;
 	overflow: visible;
 	transition: $anim-speed;
-	color: #fff!important;
 	border-radius: 6px;
 	text-decoration: none;
 	transition: $anim-speed;
 	padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
 	color: #fff;
 	background: $charcoal;
-	font-size: 0.9rem;
 	a:hover, a:focus &,
 	&:hover, &:focus {
 		color: #fff;
