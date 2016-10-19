@@ -17,8 +17,31 @@ Once you have the relevant things installed you will have to run
   npm install
 ```
 
+To run every task, recommended first time installed
+
 ```bash
   grunt all
+```
+
+To run most tasks but not some needed during developing stages (modernizr and jshint)
+
+```bash
+  grunt
+```
+
+To minify all images
+```bash
+  grunt images
+```
+
+To compile sass to css
+```bash
+  grunt sassy
+```
+
+To watch changes you make to js and sass files and compile as you work
+```bash
+  grunt watch
 ```
 
 ## Browser Support

@@ -3,9 +3,11 @@
 // \*------------------------------------*/
 
 body {
-	font-size: 16px;
+	$font-size: 16px;
+	$line-height: 24px;
 	font-family: $helvetica;
 	color: $charcoal;
+	font: #{$font-size}/#{$line-height};
 }
 
 a {
@@ -35,13 +37,17 @@ h1,h2,h3,h4,h5,h6,
 // font size mixin can be found in tools/mixins.scss
 // font sizes are declared in settings/font-vars.scss
 h1,.alpha {
-	font-size: 1.875rem;
-	font-weight: $bold;
+	font: {
+		size: 1.875em;
+		weight: $bold;
+	}
 }
 
 h2,.beta {
-	font-size: 1.25rem;
-	font-weight: $bold;
+	font: {
+		size: 1.25em;
+		weight: $bold;
+	}
 }
 
 h3,.gamma {
@@ -49,8 +55,10 @@ h3,.gamma {
 }
 
 h4, .delta {
-	font-size: 1.125em;
-	font-weight: $bold;
+	font: {
+		size: 1.125em;
+		weight: $bold;
+	}
 }
 
 h5, .echo {

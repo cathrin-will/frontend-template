@@ -134,7 +134,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	// runs everything but watch, bower and modernizr
+	// runs everything but watch,  and modernizr
 	grunt.registerTask('default', ['sass','css_mqpacker','postcss','copy','imagemin','tinypng','min']); // Default task(s)
 	// runs everything but watch
 	grunt.registerTask('all', ['sass','css_mqpacker','postcss','modernizr', 'copy','imagemin','tinypng','min','jshint']);
