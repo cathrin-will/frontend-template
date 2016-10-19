@@ -3,10 +3,10 @@
 > Strapline
 ## What you"ll need to have installed
 
-* [Sass]:http://sass-lang.com/install
-* [Ruby](https://www.ruby-lang.org/en/documentation/installation/) - Windows only, OSX has ruby already installed )
+* [Ruby](https://www.ruby-lang.org/en/documentation/installation/) - Windows only, OSX has ruby already installed
 * [Node](https://nodejs.org/en/download/)
 * [Grunt](http://gruntjs.com/)
+* [Sass](http://sass-lang.com/install)
 * [Bower](http://bower.io/)
 * [Sass](http://sass-lang.com/install)
 
@@ -22,6 +22,8 @@ To run every task, recommended first time installed
 ```bash
   grunt all
 ```
+
+## Grunt Commands
 
 To run most tasks but not some needed during developing stages (modernizr and jshint)
 
