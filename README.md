@@ -4,7 +4,7 @@
 ## What you"ll need to have installed
 
 * [Sass]:http://sass-lang.com/install
-* [Ruby](https://www.ruby-lang.org/en/documentation/installation/ ( Windows only, OSX has ruby already installed ))
+* [Ruby](https://www.ruby-lang.org/en/documentation/installation/) - Windows only, OSX has ruby already installed )
 * [Node](https://nodejs.org/en/download/)
 * [Grunt](http://gruntjs.com/)
 * [Bower](http://bower.io/)
