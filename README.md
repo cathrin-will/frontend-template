@@ -8,7 +8,6 @@
 * [Grunt](http://gruntjs.com/)
 * [Sass](http://sass-lang.com/install)
 * [Bower](http://bower.io/)
-* [Sass](http://sass-lang.com/install)
 
 ## Getting Started
 Once you have the relevant things installed you will have to run
@@ -48,3 +47,10 @@ To watch changes you make to js and sass files and compile as you work
 
 ## Browser Support
 *
+
+## CMS 
+can be found: /site-cms
+
+## Credentials Link
+
+https://credentials.purple-agency.net/
