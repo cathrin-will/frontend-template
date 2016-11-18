@@ -5,9 +5,9 @@
 body {
 	$font-size: 16px;
 	$line-height: 24px;
-	font-family: $helvetica;
-	color: $charcoal;
-	font: #{$font-size}/#{$line-height};
+	$font-family: $helvetica;
+	color: $text-main;
+	font: #{$font-size}/#{$line-height} $font-family;
 }
 
 a {
