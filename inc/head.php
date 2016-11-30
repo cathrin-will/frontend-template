@@ -30,7 +30,7 @@
 	<meta property="og:description" content=""/>
 	<meta property="og:site_name" content="" />
 	<!-- Twitter Card data -->
-	<meta name="twitter:card" value="summary_large_image">
+	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@">
 	<meta name='twitter:url' content='' />
 	<meta name="twitter:title" content="">
