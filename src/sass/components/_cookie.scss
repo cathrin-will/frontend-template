@@ -11,7 +11,7 @@
 	display: none;
 	z-index: 9999;
 	.no-js & {
-		display: block;
+		display: none;
 	}
 	a {
 		color: #fff;
@@ -23,22 +23,20 @@
 }
 
 .cookie__close {
-	background: #fff;
-	border-radius: 50%;
-	color: $charcoal;
-	font-size: 2rem;
-	width: 45px;
-	height: 45px;
+	color: #fff;
+	font-size: (50/16)+rem;
 	cursor: pointer;
 	opacity: .8;
 	transition: $anim-speed;
+	margin-top: $inuit-base-spacing-unit/2;
 	&:hover, &:active, &:focus {
 		opacity: 1;
 	}
-	@include media-query(lap-and-up) {
-		font-size: 1.5rem;
+	@include media-query(desk) {
+		font-size: (30/16)+rem;
 		position: absolute;
-		top: 0;
+		top: 50%;
+		margin-top: -15px;
 		right: $inuit-base-spacing-unit;
 	}
 }

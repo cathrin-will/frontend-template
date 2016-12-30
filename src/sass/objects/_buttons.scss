@@ -2,7 +2,7 @@
 	$BUTTONS
 \*------------------------------------*/
 
-.btn--bare {
+.btn-bare {
 	border: 0;
 	background: 0;
 	padding: 0;
@@ -14,25 +14,33 @@
 	text-align: center;
 	margin: 0;
 	outline: 0;
+	line-height: 1;
 	cursor: pointer;
 	overflow: visible;
 	transition: $anim-speed;
-	border-radius: 6px;
 	text-decoration: none;
-	transition: $anim-speed;
 	padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+	border-radius: $border-radius;
 	color: #fff;
 	background: $charcoal;
 	a:hover, a:focus &,
 	&:hover, &:focus {
 		color: #fff;
-		background: #990033;
+		background: darken($charcoal, 10%);
 	}
 	a:active &,
 	&:active {
 		color: #fff;
-		background: #75071c;
+		background: darken($charcoal, 20%);
 	}
 }
 
+.btn--lg {
+	font-size: (18/16)+rem;
+	padding: $inuit-base-spacing-unit*.75 $inuit-base-spacing-unit*2;
+}
 
+.btn--sm {
+	font-size: (14/16)+rem;
+	padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+}

@@ -6,7 +6,7 @@ body {
 	$font-size: 16px;
 	$line-height: 24px;
 	$font-family: $helvetica;
-	color: $text-main;
+	color: $text-color;
 	font: #{$font-size}/#{$line-height} $font-family;
 }
 
@@ -19,8 +19,9 @@ a {
 		color: darken($link-color, 10%);
 	}
 }
+
 p a {
-	text-decoration: underlin;
+	text-decoration: underline;
 }
 
 strong {
@@ -37,39 +38,39 @@ h1,h2,h3,h4,h5,h6,
 // font size mixin can be found in tools/mixins.scss
 // font sizes are declared in settings/font-vars.scss
 h1,.alpha {
-	font: {
-		size: 1.875em;
-		weight: $bold;
-	}
+	font-size: (30/16)+rem;
 }
 
 h2,.beta {
-	font: {
-		size: 1.25em;
-		weight: $bold;
-	}
+	font-size: (28/16)+rem;
 }
 
 h3,.gamma {
-	font-size: 1.25rem;
+	font-size: (26/16)+rem;
 }
 
 h4, .delta {
-	font: {
-		size: 1.125em;
-		weight: $bold;
-	}
+	font-size: (24/16)+rem;
 }
 
 h5, .echo {
-	font-size: 1.125em;
+	font-size: (22/16)+rem;
 }
 
-// h6, .zeta {
-// }
+h6, .zeta {
+	font-size: (20/16)+rem;
+}
 
 p {
 	&:last-child {
 		margin-bottom: 0;
+	}
+}
+
+// colours map in settings.vars
+//	creates .bg--purple ... bg--lime vars can be found in settings.vars
+@each $color, $hex in $text-colors {
+	.text--#{$color} {
+		color: #{$hex}!important;
 	}
 }

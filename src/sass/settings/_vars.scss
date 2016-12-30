@@ -2,18 +2,34 @@
 	$COLORS
 \*------------------------------------*/
 
-// main Colors
-$selection-color: 		#a0d6b4;
-$link-color:			#5f9ea0;
+// main colors
 
 // greys
-$light-grey:		#b0b1a6;
+$ash:				#ccc;
+$light-grey:		#a5a5a5;
+$mid-grey:			#808080;
 $dark-grey:			#666;
-$mid-grey:			#999;
-
-// standard
-$text-grey: 		#515151;
 $charcoal:			#404041;
+
+// defaults
+$selection-color: 		#a0d6b4;
+$link-color:			#5f9ea0;
+$text-color: 			$charcoal;
+
+//colour maps
+$bg-colors: (
+	'ash':		$ash,
+	'light-grey':		$light-grey,
+	'mid-grey':			$mid-grey,
+	'dark-grey':		$dark-grey,
+	'charcoal':			$charcoal
+);
+
+$text-colors: (
+	'white':		#fff,
+	'charcoal':		$charcoal
+);
+
 
 // Social colors
 $social-twitter:	#55acee; // directly from brand guidelines
@@ -35,12 +51,12 @@ $lap:				"screen and (min-width: 45em) and (max-width: 63.9375em)";
 $lap-and-up:		"screen and (min-width: 45em)";
 $portable:			"screen and (max-width: 63.9375em)";
 $desk:				"screen and (min-width: 64em)";
-$retina:			"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)";
+// $retina:			"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)";
 
 /*------------------------------------*\
 	$MISC
 \*------------------------------------*/
-
+$border-radius: 	6px;
 // CSS transitions
 $anim-speed:		.25s;
 $anim-speed-slow:	.33s;

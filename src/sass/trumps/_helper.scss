@@ -54,26 +54,33 @@
 	}
 }
 
-.table {
-	display: table;
-	width: 100%;
-	height: 100%;
-}
+// .u-table {
+// 	display: table;
+// 	width: 100%;
+// 	height: 100%;
+// }
 
-.table__cell {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-}
+// .u-table__cell {
+// 	display: table-cell;
+// 	text-align: center;
+// 	vertical-align: middle;
+// }
 
-.overlay {
-	display: none;
-	background: rgba(0,0,0, .5);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 500;
+// .overlay {
+// 	display: none;
+// 	background: rgba(0,0,0, .5);
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	z-index: 500;
+// }
+
+// colours maps in settings/_vars.scss
+@each $color, $hex in $bg-colors {
+	.bg--#{$color} {
+		background-color: #{$hex}!important;
+	}
 }
 

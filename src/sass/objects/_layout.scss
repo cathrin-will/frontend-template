@@ -3,16 +3,9 @@
 \*------------------------------------*/
 
 .wrapper {
-	padding: $inuit-base-spacing-unit;
+	padding: $inuit-base-spacing-unit/2;
 	@include media-query(lap) { padding: $inuit-base-spacing-unit; }
-	@include media-query(desk) { padding: $inuit-base-spacing-unit; }
-}
-@include media-query(portable) {
-	.wrapper--flush-portable {
-		padding-left: 0!important;
-		padding-right: 0!important;
-		padding-top: 0!important;
-	}
+	@include media-query(desk) { padding: $inuit-base-spacing-unit*2  $inuit-base-spacing-unit; }
 }
 
 // this seems complicated but it's pretty simple wrapper next wrapper has just one lot padding distance..

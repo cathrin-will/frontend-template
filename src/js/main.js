@@ -7,8 +7,8 @@ var main = (function() {
 	INIT
 \*------------------------------------*/
 	var init = function() {
-		cookieControl();
-		accessibleDropDown();
+		// cookieControl();
+		// accessibleDropDown();
 	};
 
 	return {

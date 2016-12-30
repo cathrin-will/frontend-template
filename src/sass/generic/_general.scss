@@ -16,9 +16,16 @@
 
 html,
 body {
-	overflow-x: hidden;
-	// transform: translate3d(0,0,0);
-	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+	line-height: 1.5;
+	background-color: #fff;
+	color: $text-color;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 iframe {
