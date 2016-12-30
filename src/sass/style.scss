@@ -25,7 +25,7 @@
 @import "generic/general";
 
 // Base: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
-@import "../../node_modules/inuit-page/base.page";
+//@import "../../node_modules/inuit-page/base.page";
 @import "base/typography";	// - h1-h6, a, p
 @import "base/form"; // basic form css
 @import "base/hr"; // horisontal rule
