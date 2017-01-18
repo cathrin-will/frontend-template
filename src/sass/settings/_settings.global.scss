@@ -1,0 +1,119 @@
+/// ========================================================================
+//   #GLOBAL
+//   =======================================================================
+
+// inuit specific
+$global-radius: 3px !default;
+$global-transition: (1/3) + s !default;
+$inuit-wrapper-width: 1480px;
+$inuit-fractions: 1 2 3 4;
+$inuit-widths-breakpoint-separator: \@ !default;
+$plus: \+;
+$plusplus: \+\+;
+$inuit-widths-delimiter: \/ !default;
+// Reassign `$inuit-global-spacing-unit`.
+$global-spacing-unit: $inuit-global-spacing-unit;
+
+$inuit-spacing-directions: (
+	null: null,
+	'-top': 't',
+	'-right': 'r',
+	'-bottom': 'b',
+	'-left': 'l',
+) !default;
+
+$inuit-spacing-properties: (
+	'padding': 'p',
+	'margin': 'm',
+) !default;
+
+$inuit-spacing-sizes: (
+	null: $inuit-global-spacing-unit,
+	'--': $inuit-global-spacing-unit-tiny,
+	'-': $inuit-global-spacing-unit-small,
+	$plus: $inuit-global-spacing-unit-large,
+	$plusplus: $inuit-global-spacing-unit-huge,
+	'0': 0
+) !default;
+
+$mq-breakpoints: (
+	palm:		1px,
+	tablet:		768px,
+	lap: 		1024px,
+	desk:		1200px,
+);
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+$mq-show-breakpoints: (palm, tablet, lap, desk);
+
+
+//  custom
+$main-font: 	'Helvetica Neue', Helvetica, Arial, sans-serif;
+$light: 		300;
+$normal:		400;
+$bold:			700;
+
+/*------------------------------------*\
+	$COLORS
+\*------------------------------------*/
+
+// main colors
+
+// greys
+$ash:				#ccc;
+$light-grey:		#a5a5a5;
+$mid-grey:			#808080;
+$dark-grey:			#666;
+$charcoal:			#404041;
+
+// defaults
+$selection-color: 		#a0d6b4;
+$link-color:			#5f9ea0;
+$text-color: 			$charcoal;
+
+//colour maps
+$bg-colors: (
+	'ash':		$ash,
+	'light-grey':		$light-grey,
+	'mid-grey':			$mid-grey,
+	'dark-grey':		$dark-grey,
+	'charcoal':			$charcoal
+);
+
+$text-colors: (
+	'white':		#fff,
+	'charcoal':		$charcoal
+);
+
+
+// Social colors
+$social-twitter:	#55acee; // directly from brand guidelines
+$social-youtube:	#e52d27; // directly from brand guidelines
+$social-gplus:		#dd4b39; // directly from brand guidelines
+$social-facebook:	#3b5998;
+$social-linkedin:	#007bb6;
+$social-instagram:	#517fa4;
+$social-pinterest:	#cb2027;
+$social-blogger:	#FF8833;
+
+/*------------------------------------*\
+	$DIMENSIONS
+\*------------------------------------*/
+
+$layout-max: 		1200px;
+$palm:				"screen and (max-width: 44.9375em)";
+$lap:				"screen and (min-width: 45em) and (max-width: 63.9375em)";
+$lap-and-up:		"screen and (min-width: 45em)";
+$portable:			"screen and (max-width: 63.9375em)";
+$desk:				"screen and (min-width: 64em)";
+// $retina:			"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)";
+
+/*------------------------------------*\
+	$MISC
+\*------------------------------------*/
+$border-radius: 	6px;
+// CSS transitions
+$anim-speed:		.25s;
+$anim-speed-slow:	.33s;

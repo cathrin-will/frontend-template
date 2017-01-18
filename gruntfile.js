@@ -113,7 +113,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['src/sass/**/*.scss'],
-				tasks: ['sass','css_mqpacker','postcss']
+				tasks: ['sass']
 			},
 			copy: {
 				files: ['src/js/vendor/','src/fonts/'],
@@ -132,7 +132,27 @@ module.exports = function(grunt) {
 					'src': ['dist/css/**/*.css','dist/js/main.min.js']
 				}
 			}
-		}
+		},
+	  sassdoc: {
+	    default: {
+	      src: 'src/sass/**/*.scss',
+	      options: {
+	        dest: 'path/to/docs',
+	        display: {
+	          access: ['public', 'private'],
+	          alias: true,
+	          watermark: true,
+	        },
+	        groups: {
+	          slug: 'Title',
+	          helpers: 'Helpers',
+	          hacks: 'Dirty Hacks & Fixes',
+	          'undefined': 'Ungrouped',
+	        },
+	        // basePath: 'https://github.com/SassDoc/grunt-sassdoc',
+	      },
+	    },
+	  },
 	});
 
 	// runs everything but watch,  and modernizr
@@ -154,4 +174,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks("css-mqpacker");
+	grunt.loadNpmTasks('grunt-sassdoc');
 };

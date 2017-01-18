@@ -1,11 +1,11 @@
-// /*------------------------------------*\
+// ------------------------------------*\
 //     $TYPOGRAPHY
-// \*------------------------------------*/
+// ------------------------------------*/
 
 body {
 	$font-size: 16px;
 	$line-height: 24px;
-	$font-family: $helvetica;
+	$font-family: $main-font;
 	color: $text-color;
 	font: #{$font-size}/#{$line-height} $font-family;
 }
@@ -33,31 +33,32 @@ h1,h2,h3,h4,h5,h6,
 .beta,
 .gamma {
 	font-weight: $normal;
+	line-height: 1.5;
 }
 
 // font size mixin can be found in tools/mixins.scss
 // font sizes are declared in settings/font-vars.scss
-h1,.alpha {
+h1,.u-h1 {
 	font-size: (30/16)+rem;
 }
 
-h2,.beta {
+h2,.u-h2 {
 	font-size: (28/16)+rem;
 }
 
-h3,.gamma {
+h3,.u-h3 {
 	font-size: (26/16)+rem;
 }
 
-h4, .delta {
+h4, .u-h4 {
 	font-size: (24/16)+rem;
 }
 
-h5, .echo {
+h5, .u-h5 {
 	font-size: (22/16)+rem;
 }
 
-h6, .zeta {
+h6, .u-h6 {
 	font-size: (20/16)+rem;
 }
 

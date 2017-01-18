@@ -22,34 +22,22 @@
 
 // this hides content visually but not from screenreaders
 .visuallyhidden {
-	border: 0!important;
-	clip: rect(0 0 0 0)!important;
-	height: 1px!important;
-	margin: -1px!important;
-	overflow: hidden!important;
-	padding: 0!important;
-	position: absolute!important;
-	width: 1px!important;
+	@include inuit-hidden-visually();
 }
 
-@each $state in palm, lap, lap-and-up, portable, desk {
-	@include media-query(#{$state}) {
-		.hidden-#{$state} {
-			display: none!important;
-			position: absolute;
-		}
-		.visuallyhidden-#{$state} {
-			border: 0!important;
-			clip: rect(0 0 0 0)!important;
-			height: 1px!important;
-			margin: -1px!important;
-			overflow: hidden!important;
-			padding: 0!important;
-			position: absolute!important;
-			width: 1px!important;
-		}
-		.text--center-#{$state} {
-			text-align: center!important;
+@if (variable-exists(mq-breakpoints)) {
+	@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+		@include mq($from: $inuit-bp-name) {
+			.hidden#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
+				display: none!important;
+				position: absolute;
+			}
+			.visuallyhidden#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
+				@include inuit-hidden-visually();
+			}
+			.text--center#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
+				text-align: center!important;
+			}
 		}
 	}
 }
