@@ -7,12 +7,11 @@ $global-radius: 3px !default;
 $global-transition: (1/3) + s !default;
 $inuit-wrapper-width: 1480px;
 $inuit-fractions: 1 2 3 4;
+$inuit-offsets: true;
 $inuit-widths-breakpoint-separator: \@ !default;
 $plus: \+;
 $plusplus: \+\+;
 $inuit-widths-delimiter: \/ !default;
-// Reassign `$inuit-global-spacing-unit`.
-$global-spacing-unit: $inuit-global-spacing-unit;
 
 $inuit-spacing-directions: (
 	null: null,
@@ -70,7 +69,7 @@ $charcoal:			#404041;
 
 // defaults
 $selection-color: 		#a0d6b4;
-$link-color:			#5f9ea0;
+$link-color:			#4078c0;
 $text-color: 			$charcoal;
 
 //colour maps
@@ -99,21 +98,10 @@ $social-pinterest:	#cb2027;
 $social-blogger:	#FF8833;
 
 /*------------------------------------*\
-	$DIMENSIONS
-\*------------------------------------*/
-
-$layout-max: 		1200px;
-$palm:				"screen and (max-width: 44.9375em)";
-$lap:				"screen and (min-width: 45em) and (max-width: 63.9375em)";
-$lap-and-up:		"screen and (min-width: 45em)";
-$portable:			"screen and (max-width: 63.9375em)";
-$desk:				"screen and (min-width: 64em)";
-// $retina:			"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)";
-
-/*------------------------------------*\
 	$MISC
 \*------------------------------------*/
 $border-radius: 	6px;
+$global-spacing-unit: 24px;
 // CSS transitions
 $anim-speed:		.25s;
 $anim-speed-slow:	.33s;

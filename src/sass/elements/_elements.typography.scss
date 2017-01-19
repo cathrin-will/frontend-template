@@ -21,7 +21,7 @@ a {
 }
 
 p a {
-	text-decoration: underline;
+	border-bottom: 1px dotted $link-color;
 }
 
 strong {

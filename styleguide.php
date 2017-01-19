@@ -1,32 +1,33 @@
 <?php include("inc/head.php"); ?>
+<style>
+	.o-wrapper:nth-child(odd) {
+		border-bottom: 1px solid #ccc;
+	}
+	code {
+		color: #000;
+	}
+</style>
 <body>
 	<?php include("inc/header.php"); ?>
 <div class="o-wrapper">
-	<div class="o-layout-wrapper">
-		<h1 class="text--center">XXX styleguide</h1>
-		<p class="lede">This is the  <strong>XXX</strong> style guide, detailing the components and variables that make up the entirety of the site. They are designed to be as generic (and therefore re-usable) as possible.</p>
-		<h1 class="u-p u-mt0 text--center@palm text--center@lap">test</h1>
-		<p> The site is responsive and built using <a href="http://sass-lang.com/">SASS</a> and the <a href="https://github.com/inuitcss">Inuit Alpha framework</a> to create modular components with <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM</a> syntax.</p>
-		<p>All variables are defined in, <code>settings/_inuit-vars.scss</code>, <code>settings/_vars.scss</code> and <code>settings/_font-vars.scss</code> SASS files.</p>
-	</div><!-- /.layout-wrapper -->
+	<h1 class="text--center">XXX styleguide</h1>
+	<p class="lede">This is the  <strong>XXX</strong> style guide, detailing the components and variables that make up the entirety of the site. They are designed to be as generic (and therefore re-usable) as possible.</p>
+	<p> The site is responsive and built using <a href="http://sass-lang.com/">SASS</a> and the <a href="https://github.com/inuitcss/inuitcss">Inuit Beta framework</a> to create modular components with <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM</a> syntax.</p>
+	<p>All variables are defined in: <code>_settings.global.scss</code>.</p>
 </div><!-- /.wrapper -->
+
 <div class="o-wrapper"  id="sg-layout">
 	<h2 class="text--center">Layout structure</h2>
-	<div class="o-layout-wrapper">
-		<p>The Inuit layout framework has classes based on ratios such as <code>.u-1/2</code> or <code>.u-1/3</code>, allowing for flexible sizes and nesting where required. the amount of columns can be turned on or off in <code>_inuit-vars.scss</code></p>
-		<p>The spacing of layout items (and much more throughtout the site) is based on the variable <code>$inuit-base-spacing-unit</code>, defined in <code>_inuit-vars.scss</code>. There are other variants turned on in <code>_inuit-vars.scss</code> such as <code>$inuit-enable-layout--tiny</code></p>
-		<p>The layout is mobile-first, so unless a width class is declared, the layout item shall be full width (same as specifying the class of <code>.u-1/1</code>).</p>
-		<p>Because the layout is responsive and percentage based, it will fill the available space. In order to restrict the maximum size of the layout (and therefore the site), a <code>div.layout-wrapper</code> is required the max-width of which is set to the variable <code>$layout-max</code> in <code>_vars.scss</code>.</p>
-		<p>The size of the layout items is based on these breakpoints:</p>
-		<ul class="list--plain  u-mb">
-			<li><code>$layout-max:	1200px;</code></li>
-			<li><code>$palm:		"screen and (max-width: 44.9375em)";</code></li>
-			<li><code>$lap:			"screen and (min-width: 45em) and (max-width: 63.9375em)";</code></li>
-			<li><code>$lap-and-up:	"screen and (min-width: 45em)";</code></li>
-			<li><code>$portable: 	"screen and (max-width: 63.9375em)";</code></li>
-			<li><code>$desk:		"screen and (min-width: 64em)";</code></li>
-		</ul>
-		<p> Because the layout system makes use of <code>inline-block</code> for layout, the whitespace around the elements does matter. Either ensure there is no gap between <code>.layout__item</code> divs, or close the gap using comments in the markup.</p>
+		<p>The Inuit layout framework has classes based on ratios such as <code>.u-1/2</code> or <code>.u-1/3</code>, allowing for flexible sizes and nesting where required. the amount of columns can be turned on or off. The layout is mobile-first, so unless a width class is declared, the layout item shall be full width (same as specifying the class of <code>.u-1/1</code>). to target specific media queries add @ and the media item in question, so for instance <code>.u-1/2@desk</code> or <code>.u-1/3@retina</code> or <code>.u-1/5@xl</code></p>
+		<p>The breakpoints can be custom defined and added or removed, for this project they are:</p>
+			<ul>
+				<li>palm:		1px,</li>
+				<li>tablet:		768px,</li>
+				<li>lap: 		1024px,</li>
+				<li>desk:		1200px</li>
+			</ul>
+		<p>The spacing of layout items (and much more throughtout the site) is based on the variable <code>$global-spacing-unit</code>, for this project it is 24px.</p>
+
 		<div class="o-layout text--center">
 			<div class="o-layout__item u-1/4 u-1/2@lap u-1/4@desk">
 				<p class="bg--ash u-mb-"> 1/4</p>
@@ -62,32 +63,28 @@
 				<p class="bg--ash u-mb-"> 1</p>
 			</div>
 		</div><!-- /layout -->
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-helper">
 	<h2 class="text--center">Helper classes</h2>
-	<div class="o-layout-wrapper">
-		<p> There are a wide range of helper classes, which are set in inuit-vars and some others that are in _helper.scss</p>
+		<p> There are a wide range of helper classes, which are set in <code>_settings.global.scss</code> and  <code>utilities.helper.scss</code></p>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/2@lap  u-1/2@desk">
 				<h3>Padding and margin</h3>
 				<p>(m|p)(t|r|b|l|h|v)(-|+|0) {}` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none</p>
 				<strong>E.g.</strong>
-				<p>class names u-mb (unit-marginbottom)</p>
-				<p>class names u-mt (unit-margintop)</p>
+				<p><code>.u-mb</code> (unit-margin bottom)</p>
+				<p><code>.u-pt0</code> (unit-padding top zero)</p>
 			</div>
 			<div class="o-layout__item u-1/2@lap  u-1/2@desk">
 				<h3>Hidden</h3>
 				<p>A class of <code>visuallyhidden</code> can be used to hide elements visually but still visible for screen readers. And a class of <code>hidden</code> hides it for both visual and screen readers. Both come with media-query abilites. </p>
 				<strong>E.g</strong>
-				<p>hidden--palm hides on mobiles</p>
+				<p><code>hidden@palm</code> to hide for mobiles</p>
 			</div>
 		</div>
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper" id="sg-typography">
-	<h2 class="text--center">Typography  (/objects/ _typography.scss)</h2>
-	<div class="o-layout-wrapper">
+	<h2 class="text--center">Typography  (/objects /_typography.scss)</h2>
 		<div class="o-layout">
 			<div class="o-layout__item  u-1/2@desk">
 				<h3 class="text--red">Headings</h3>
@@ -116,11 +113,9 @@
 				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, adipisci placeat deleniti laboriosam sapiente in minus culpa eius omnis distinctio recusandae alias dolores et vel atque amet molestiae esse dolorem.</p>
 			</div>
 		</div><!-- /layout -->
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-colors">
-	<h2 class="text--center">Colour Palette (_vars.scss)</h2>
-	<div class="o-layout-wrapper">
+	<h2 class="text--center">Colour Palette (_settings.global.scss)</h2>
 		<p>The official XXX colours</p>
 		<p> In addition the primary colours exist as helper classes <code>.bg--[colour name]</code></p>
 		<!-- <h3>Primary Colours</h3> -->
@@ -173,13 +168,11 @@
 				</div>
 			</div>
 		</div><!-- /layout -->
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper" id="sg-buttons">
-	<div class="o-layout-wrapper">
 		<h2 class="text--center">Buttons (/objects/ _buttons.scss)</h2>
 		<p>Class of <code>.btn</code> can be added to anchor, span or button elements, including inputs however they will not support having an icon inside.</p>
-		<p> Always start with a class of <code>.btn</code> then add helper classes such as <code>.btn--red, .btn--grey, .btn--sm, .btn--lg</code> adding a class of <code>.u-1/1</code> will make a button full length.</p>
+		<p> Always start with a class of <code>.btn</code> then add helper classes such as <code>.btn--red, .btn--grey, .btn--sm, .btn--lg</code> adding a class of <code>.u-1/1</code> will make a button full length. The one exception is <code>.btn-bare</code> which should not be used with any other btn classes.</p>
 		<div class="o-layout">
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
 				<h4>.btn </h4>
@@ -211,13 +204,12 @@
 			</div><!--
 			-->
 		</div><!-- /layout -->
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper" id="sg-icons">
-	<div class="o-layout-wrapper">
 		<h2 class="text--center">Icons (/objects/ _icons.scss)</h2>
+		<p>We make use of <a href="https://icomoon.io/app/#/select">icomoon</a> for icons, when they need to be changed/added/removed go the icomoon and import the <code>selection.json</code> file to see whats currently being used, after you're done don't forget to update the json file.</p>
 		<div class="o-layout">
-		<div class="o-layout__item u-1/4@lap u-1/4@desk  u-1/2  u-mb">
+			<div class="o-layout__item u-1/4@lap u-1/4@desk  u-1/2  u-mb">
 				<span class="icon-caret-right"></span> <span> .icon-caret-right</span>
 			</div>
 			<div class="o-layout__item u-1/4@lap u-1/4@desk  u-1/2  u-mb">
@@ -245,10 +237,8 @@
 				<span class="icon-checkmark"></span> <span> .icon-checkmark</span>
 			</div>
 		</div><!-- /layout -->
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-lists">
-	<div class="o-layout-wrapper">
 		<h2 class="text--center">Lists (/objects/ _lists.scss)</h2>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/2@lap u-1/4@desk">
@@ -284,10 +274,8 @@
 				</ol>
 			</div>
 		</div><!-- /layout -->
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-table">
-	<div class="o-layout-wrapper">
 		<h2 class="text--center">Tables (/objects/ table.scss)</h2>
 		<h3>Standard Table: <code>table</code></h3>
 		<table class="table">
@@ -320,11 +308,9 @@
 				</tr>
 			</tbody>
 		</table>
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 
 <div class="o-wrapper"  id="sg-images">
-	<div class="o-layout-wrapper">
 		<h2 class="text--center">images (/objects/ images.scss)</h2>
 		<p>some examples showing images next to and around text depending on position</p>
 		<code> img.img--left/.img--right/.center + p</code>
@@ -346,32 +332,35 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 			</div>
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-forms">
-	<div class="o-layout-wrapper">
 		<h2 class="text--center">form elements (/objects/ forms.scss)</h2>
 			<form action="#" class="form">
 				<div class="o-layout">
 					<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
-						<label for="select">Label</label>
+						<label for="select">Label Select</label>
 					</div>
 					<div class="o-layout__item u-mb- u-3/4@lap u-1/1">
-						<select name="select" id="select" class="u-1/2@lap u-1/2@desk">
+						<select name="select" id="select" class="u-1/2@lap">
 							<option value="0">Example</option>
 							<option value="1">1</option>
 							<option value="text">text</option>
 						</select>
 					</div>
 					<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
-						<label for="input">Label</label>
+						<label for="input">Label input</label>
 					</div>
 					<div class="o-layout__item u-mb- u-3/4@lap u-1/1">
-						<input type="text" name="input" id="input" placeholder="placeholder">
+						<input type="text" name="input" id="input" placeholder="placeholder" class="u-1/2@lap">
+					</div>
+					<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
+						<label for="textarea">Label textarea</label>
+					</div>
+					<div class="o-layout__item u-mb- u-3/4@lap u-1/1">
+						<textarea name="textarea" id="textarea" placeholder="placeholder" class="u-1/2@lap"></textarea>
 					</div>
 				</div>
 			</form>
-	</div><!-- /.layout-wrapper -->
 </div><!-- /.wrapper -->
 
 	<?php include("inc/footer.php");  include("inc/cookie.php");  include("inc/scripts.php"); ?>

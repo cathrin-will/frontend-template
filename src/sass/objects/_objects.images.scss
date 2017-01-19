@@ -5,10 +5,10 @@
 .img {
 	&--left {
 		float: left;
-		padding: 0 $inuit-base-spacing-unit $inuit-base-spacing-unit 0;
+		padding: 0 $global-spacing-unit $global-spacing-unit 0;
 	}
 	&--right {
 		float: right;
-		padding: 0 0 $inuit-base-spacing-unit $inuit-base-spacing-unit;
+		padding: 0 0 $global-spacing-unit $global-spacing-unit;
 	}
 }

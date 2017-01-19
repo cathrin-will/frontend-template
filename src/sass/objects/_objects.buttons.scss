@@ -19,8 +19,8 @@
 	overflow: visible;
 	transition: $anim-speed;
 	text-decoration: none;
-	padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-	border-radius: $border-radius;
+	padding: $global-spacing-unit/2 $global-spacing-unit;
+	border-radius: $global-radius;
 	color: #fff;
 	background: $charcoal;
 	a:hover, a:focus &,
@@ -37,10 +37,10 @@
 
 .btn--lg {
 	font-size: (18/16)+rem;
-	padding: $inuit-base-spacing-unit*.75 $inuit-base-spacing-unit*2;
+	padding: $global-spacing-unit*.75 $global-spacing-unit*2;
 }
 
 .btn--sm {
 	font-size: (14/16)+rem;
-	padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+	padding: quarter($global-spacing-unit) $global-spacing-unit;
 }
