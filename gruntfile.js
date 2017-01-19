@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		jshint: {
-			beforeconcat: ['src/js/main.js'] // all we really want is for jshints to be turned on not to actually fail the file !
+			beforeconcat: ['src/js/main.js', 'src/js/base/plugins/**.js'] // all we really want is for jshints to be turned on not to actually fail the file !
 		},
 		min: {
 			options: {
@@ -37,20 +37,6 @@ module.exports = function(grunt) {
 				]
 			},
 			files: {
-				expand: true,
-				cwd: 'dist/css/',
-				src: ['**/*.css'],
-				dest: 'dist/css/'
-			}
-		},
-		css_mqpacker: {
-			options: {
-				map: {
-					inline: false,
-					sourcesContent: false
-				}
-			},
-			main: {
 				expand: true,
 				cwd: 'dist/css/',
 				src: ['**/*.css'],
@@ -103,7 +89,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: ['src/js/**/*.js'],
-				tasks: ['min'],
+				tasks: ['min','insert_timestamp:js'],
 				options: { nospawn: true }
 			},
 			lint: {
@@ -113,7 +99,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['src/sass/**/*.scss'],
-				tasks: ['sass']
+				tasks: ['sass', 'postcss','insert_timestamp:css']
 			},
 			copy: {
 				files: ['src/js/vendor/','src/fonts/'],
@@ -133,36 +119,54 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-	  sassdoc: {
-	    default: {
-	      src: 'src/sass/**/*.scss',
-	      options: {
-	        dest: 'path/to/docs',
-	        display: {
-	          access: ['public', 'private'],
-	          alias: true,
-	          watermark: true,
-	        },
-	        groups: {
-	          slug: 'Title',
-	          helpers: 'Helpers',
-	          hacks: 'Dirty Hacks & Fixes',
-	          'undefined': 'Ungrouped',
-	        },
-	        // basePath: 'https://github.com/SassDoc/grunt-sassdoc',
-	      },
-	    },
-	  },
+		insert_timestamp: {
+			options: {
+				prepend: true,
+				append: false,
+				format: 'yyyy-mm-dd HH:MM:ss o',
+				template: '/* {timestamp} */',
+				datetime: new Date(),
+				insertNewlines: true
+			},
+			css: {
+				options: {
+					prepend: false,
+					append: true,
+					template: '/*! CSS compiled on: {timestamp} */'
+				},
+				files: [{
+					expand: true,
+					cwd: 'dist/css',
+					src: ['**/*.css'],
+					dest: 'dist/css',
+					ext: '.css'
+				}]
+			},
+			js: {
+				options: {
+					format: false,
+					template: '// JS compiled on: {timestamp}\n\n',
+					insertNewlines: false
+				},
+				files: [{
+					expand: true,
+					cwd: 'dist/js',
+					src: ['**/*.js'],
+					dest: 'dist/js',
+					ext: '.js'
+				}]
+			}
+		},
 	});
 
 	// runs everything but watch,  and modernizr
-	grunt.registerTask('default', ['sass','css_mqpacker','postcss','copy','imagemin','tinypng','min']); // Default task(s)
+	grunt.registerTask('default', ['sass','postcss','copy','imagemin','tinypng','min','insert_timestamp']); // Default task(s)
 	// runs everything but watch
-	grunt.registerTask('all', ['sass','css_mqpacker','postcss','modernizr', 'copy','imagemin','tinypng','min','jshint']);
+	grunt.registerTask('all', ['sass','postcss','modernizr', 'copy','imagemin','tinypng','min','insert_timestamp','jshint']);
 	// runs all image minifiers
 	grunt.registerTask('images', ['imagemin','tinypng']);
 	// create finished css
-	grunt.registerTask('sassy', ['sass', 'postcss','css_mqpacker']);
+	grunt.registerTask('sassy', ['sass', 'postcss','insert_timestamp']);
 
 	grunt.loadNpmTasks('grunt-yui-compressor');
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -173,6 +177,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-tinypng');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks("css-mqpacker");
-	grunt.loadNpmTasks('grunt-sassdoc');
+	grunt.loadNpmTasks('grunt-insert-timestamp');
 };

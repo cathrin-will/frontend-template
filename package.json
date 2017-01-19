@@ -1,6 +1,6 @@
 {
   "name": "front-end-template",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "frontend template to start new projects",
   "repository": {
     "type": "git",
@@ -28,9 +28,9 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-css-mqpacker": "^3.0.1",
+    "grunt-insert-timestamp": "^0.1.0",
     "grunt-modernizr": "^0.6.1",
     "grunt-postcss": "^0.8.0",
-    "grunt-sassdoc": "^2.0.2",
     "grunt-tinypng": "^0.6.1",
     "grunt-yui-compressor": "^0.4.0",
     "pixrem": "^3.0.0",
