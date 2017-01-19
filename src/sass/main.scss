@@ -121,10 +121,8 @@
 @import "objects/objects.layout"; 		// wrapper padding, max grid, non reposive columns
 @import "objects/objects.buttons";		// buttons styles
 @import "objects/objects.lists"; 		// list styles
-//@import "objects/objects.island"; 		// boxes
 //@import "objects/objects.media"; 		// includes flexbox media-row
 @import "objects/objects.form"; 			// form classes
-@import "objects/objects.typography"; 		// specific styles + helper classes
 @import "objects/objects.images"; 		// image helper classes
 @import "objects/objects.table";			//data tables
 @import "objects/objects.icons";
@@ -141,8 +139,9 @@
 @import "../../node_modules/inuitcss/utilities/utilities.widths";
 @import "../../node_modules/inuitcss/utilities/utilities.spacing";
 @import "../../node_modules/inuitcss/utilities/utilities.print";
-@import "../../node_modules/inuitcss/utilities/utilities.hide";
+// @import "../../node_modules/inuitcss/utilities/utilities.hide";
 @import "utilities/utilities.helper"; // includes text aligns, colours, js/no-js hide shows
+@import "utilities/utilities.typography";
 
 
 

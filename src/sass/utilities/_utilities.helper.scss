@@ -2,38 +2,26 @@
 	$HELPERS
 \*------------------------------------*/
 
-.center {
-	margin: 0 auto;
-	display: table; // trying something out
-}
 
-.v-center {
-	display: flex!important;
-	justify-content: center;
-	flex-direction: column;
-	padding-bottom: 0;
-}
+.u-dib { display: inline-block!important; }
+.u-db { display: block!important; }
+.u-di { display: inline!important; }
 
-.block { display: block!important; }
-.hidden {
+.u-hidden {
 	display: none!important;
-	position: absolute;
 }
 
 // this hides content visually but not from screenreaders
-.visuallyhidden {
+.u-visuallyhidden {
 	@include inuit-hidden-visually();
 }
 
 @if (variable-exists(mq-breakpoints)) {
 	@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
 		@include mq($from: $inuit-bp-name) {
-			.hidden#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
+			.u-hidden#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
 				display: none!important;
 				position: absolute;
-			}
-			.visuallyhidden#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
-				@include inuit-hidden-visually();
 			}
 			.text--center#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
 				text-align: center!important;

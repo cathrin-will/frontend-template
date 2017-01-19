@@ -11,4 +11,9 @@
 		float: right;
 		padding: 0 0 $global-spacing-unit $global-spacing-unit;
 	}
+	&--center {
+		display: block;
+		margin: auto;
+		padding: 0 0 $global-spacing-unit 0;
+	}
 }

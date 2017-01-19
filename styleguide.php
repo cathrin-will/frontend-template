@@ -1,6 +1,6 @@
 <?php include("inc/head.php"); ?>
 <style>
-	.o-wrapper:nth-child(odd) {
+	.o-wrapper {
 		border-bottom: 1px solid #ccc;
 	}
 	code {
@@ -19,6 +19,7 @@
 <div class="o-wrapper"  id="sg-layout">
 	<h2 class="text--center">Layout structure</h2>
 		<p>The Inuit layout framework has classes based on ratios such as <code>.u-1/2</code> or <code>.u-1/3</code>, allowing for flexible sizes and nesting where required. the amount of columns can be turned on or off. The layout is mobile-first, so unless a width class is declared, the layout item shall be full width (same as specifying the class of <code>.u-1/1</code>). to target specific media queries add @ and the media item in question, so for instance <code>.u-1/2@desk</code> or <code>.u-1/3@retina</code> or <code>.u-1/5@xl</code></p>
+		<p>In addition there is push and pulls to reset any leftover or conflicting left/right values. e.g u-push-1/2 these can also be media query specifc</p>
 		<p>The breakpoints can be custom defined and added or removed, for this project they are:</p>
 			<ul>
 				<li>palm:		1px,</li>
@@ -29,33 +30,33 @@
 		<p>The spacing of layout items (and much more throughtout the site) is based on the variable <code>$global-spacing-unit</code>, for this project it is 24px.</p>
 
 		<div class="o-layout text--center">
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/4@desk">
+			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
 				<p class="bg--ash u-mb-"> 1/4</p>
 			</div>
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/4@desk">
+			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
 				<p class="bg--ash u-mb-"> 1/4</p>
 			</div>
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/4@desk">
+			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
 				<p class="bg--ash u-mb-"> 1/4</p>
 			</div>
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/4@desk">
+			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
 				<p class="bg--ash u-mb-"> 1/4</p>
 			</div>
 
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/3@desk">
+			<div class="o-layout__item u-1/3@lap">
 				<p class="bg--ash u-mb-"> 1/3</p>
 			</div>
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/3@desk">
+			<div class="o-layout__item u-1/3@lap">
 				<p class="bg--ash u-mb-"> 1/3</p>
 			</div>
-			<div class="o-layout__item u-1/4 u-1/2@lap u-1/3@desk">
+			<div class="o-layout__item u-1/3@lap">
 				<p class="bg--ash u-mb-"> 1/3</p>
 			</div>
 
-			<div class="o-layout__item u-1/4 u-1/2@lap  u-1/2@desk">
+			<div class="o-layout__item u-1/2@lap">
 				<p class="bg--ash u-mb-"> 1/2</p>
 			</div>
-			<div class="o-layout__item u-1/4 u-1/2@lap  u-1/2@desk">
+			<div class="o-layout__item u-1/2@lap">
 				<p class="bg--ash u-mb-"> 1/2</p>
 			</div>
 
@@ -77,29 +78,38 @@
 			</div>
 			<div class="o-layout__item u-1/2@lap  u-1/2@desk">
 				<h3>Hidden</h3>
-				<p>A class of <code>visuallyhidden</code> can be used to hide elements visually but still visible for screen readers. And a class of <code>hidden</code> hides it for both visual and screen readers. Both come with media-query abilites. </p>
+				<p>A class of <code>.u-visuallyhidden</code> can be used to hide elements visually but still visible for screen readers. And a class of <code>.u-hidden</code> hides it for both visual and screen readers. Hidden comes with media-query abilites. </p>
 				<strong>E.g</strong>
-				<p><code>hidden@palm</code> to hide for mobiles</p>
+				<p><code>.u-hidden@palm</code> to hide for mobiles</p>
+			</div>
+			<div class="o-layout__item u-1/2@lap  u-1/2@desk">
+				<h3 class="u-mt">Misc</h3>
+				<ul>
+					<li><code>.u-clearfix</code> &nbsp;&nbsp; float fix</li>
+					<li><code>.u-dib</code> &nbsp;&nbsp; display inline-block</li>
+					<li><code>.u-db</code> &nbsp;&nbsp; display block</li>
+					<li><code>.u-dib</code> &nbsp;&nbsp; display inline</li>
+				</ul>
 			</div>
 		</div>
 </div><!-- /.wrapper -->
 <div class="o-wrapper" id="sg-typography">
-	<h2 class="text--center">Typography  (/objects /_typography.scss)</h2>
+	<h2 class="text--center">Typography</h2>
 		<div class="o-layout">
 			<div class="o-layout__item  u-1/2@desk">
 				<h3 class="text--red">Headings</h3>
 				<p>Standard Headings (H1-H6).</p>
 				<p>Sensible default margins are included by default, but can be overwritten using Inuit's built-in helper classes.</p>
-				<h1>h1 .alpha 30px - Helvetica </h1>
-				<h2>h2 .beta 28px - Helvetica </h2>
-				<h3>h3 .gamma 26px – Helvetica </h3>
-				<h4>h4 .delta 24px – Helvetica </h4>
-				<h5>h5 .echo 22px - Helvetica  </h5>
-				<h6>h6 .zeta 20px - Helvetica </h6>
+				<h1>h1 <code>.u-h1</code> 30px - Helvetica </h1>
+				<h2>h2 <code>.u-h2</code> 28px - Helvetica </h2>
+				<h3>h3 <code>.u-h3</code> 26px – Helvetica </h3>
+				<h4>h4 <code>.u-h4</code> 24px – Helvetica </h4>
+				<h5>h5 <code>.u-h5</code> 22px - Helvetica  </h5>
+				<h6>h6 <code>.u-h6</code> 20px - Helvetica </h6>
 
 			</div>
 			<div class="o-layout__item  u-1/2@desk">
-				<h3 class="text--red">Typography helper classes</h3>
+				<h3 class="text--red">Typography helper classes <code>utilities.typography</code></h3>
 				<ul>
 					<li><p class="caps">.caps</p></li>
 					<li><p class="text--right">.text--right</p></li>
@@ -115,9 +125,9 @@
 		</div><!-- /layout -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-colors">
-	<h2 class="text--center">Colour Palette (_settings.global.scss)</h2>
+	<h2 class="text--center">Colour Palette <code>settings.global</code></h2>
 		<p>The official XXX colours</p>
-		<p> In addition the primary colours exist as helper classes <code>.bg--[colour name]</code></p>
+		<p>There are two maps in <code>settings.global</code> to set up helper classes <code>.bg--[colour name]</code> and <code>.text--[colour name]</code>  only those added to the map will be generated</p>
 		<!-- <h3>Primary Colours</h3> -->
 		<div class="o-layout">
 		<!-- 	<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
@@ -170,43 +180,39 @@
 		</div><!-- /layout -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper" id="sg-buttons">
-		<h2 class="text--center">Buttons (/objects/ _buttons.scss)</h2>
+		<h2 class="text--center">Buttons <code>objects.buttons</code></h2>
 		<p>Class of <code>.btn</code> can be added to anchor, span or button elements, including inputs however they will not support having an icon inside.</p>
 		<p> Always start with a class of <code>.btn</code> then add helper classes such as <code>.btn--red, .btn--grey, .btn--sm, .btn--lg</code> adding a class of <code>.u-1/1</code> will make a button full length. The one exception is <code>.btn-bare</code> which should not be used with any other btn classes.</p>
 		<div class="o-layout">
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
-				<h4>.btn </h4>
+			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
+				<code class="u-mt- u-mb- block">.btn </code>
 				<a href="#" class="btn">button</a>
 			</div>
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
-				<h4>.btn.btn--blue </h4>
-				<a href="#" class="btn btn--blue">button</a>
-			</div>
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
-				<h4>.btn > span.icon </h4>
+			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
+				<code class="u-mt- u-mb- block">.btn > span.icon </code>
 					<a href="#" class="btn"> button <span class="icon-caret-right"></span></a>
 			</div>
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
-				<h4>.btn.btn--sm </h4>
+			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
+				<code class="u-mt- u-mb- block">.btn.btn--sm </code>
 				<a href="#" class="btn  btn--sm">button</a>
 			</div>
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
-				<h4>.btn.btn--lg </h4>
+			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
+				<code class="u-mt- u-mb- block">.btn.btn--lg </code>
 				<a href="#" class="btn  btn--lg">button</a>
 			</div>
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/2@desk  text--center">
-				<h4>.btn.u-1/1 </h4>
+			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/2@desk">
+				<code class="u-mt- u-mb- block">.btn.u-1/1 </code>
 				<a href="#" class="btn  u-1/1">button</a>
 			</div>
-			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk  text--center">
-				<h4>button.btn-bare </h4>
+			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
+				<code class="u-mt- u-mb- block">button.btn-bare </code>
 				<button class=" btn-bare">I'm a button but you can't tell</button>
 			</div><!--
 			-->
 		</div><!-- /layout -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper" id="sg-icons">
-		<h2 class="text--center">Icons (/objects/ _icons.scss)</h2>
+		<h2 class="text--center">Icons <code>objects.icons</code></h2>
 		<p>We make use of <a href="https://icomoon.io/app/#/select">icomoon</a> for icons, when they need to be changed/added/removed go the icomoon and import the <code>selection.json</code> file to see whats currently being used, after you're done don't forget to update the json file.</p>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/4@lap u-1/4@desk  u-1/2  u-mb">
@@ -239,7 +245,7 @@
 		</div><!-- /layout -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-lists">
-		<h2 class="text--center">Lists (/objects/ _lists.scss)</h2>
+		<h2 class="text--center">Lists <code>objects.lists</code></h2>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/2@lap u-1/4@desk">
 				<p><strong><code>list--bare .list--inline</code></strong></p>
@@ -276,7 +282,7 @@
 		</div><!-- /layout -->
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-table">
-		<h2 class="text--center">Tables (/objects/ table.scss)</h2>
+		<h2 class="text--center">Tables <code>objects.table</code></h2>
 		<h3>Standard Table: <code>table</code></h3>
 		<table class="table">
 			<thead>
@@ -311,30 +317,30 @@
 </div><!-- /.wrapper -->
 
 <div class="o-wrapper"  id="sg-images">
-		<h2 class="text--center">images (/objects/ images.scss)</h2>
-		<p>some examples showing images next to and around text depending on position</p>
-		<code> img.img--left/.img--right/.center + p</code>
-			<div>
-				<img src="http://placehold.it/350x150" alt="" class="img--left">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-			</div>
-			<div>
-				<img src="http://placehold.it/350x150" alt="" class="img--right">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae est facere enim ea reiciendis nemo porro, veritatis, ratione nostrum! Necessitatibus ad consequatur at nemo expedita voluptatum. Adipisci aspernatur aperiam dolores.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati iusto quos, maiores qui ipsam omnis accusamus perspiciatis totam, neque doloribus doloremque error laboriosam eius sunt ducimus porro suscipit voluptas consequuntur.</p>
-			</div>
-			<div>
-				<img src="http://placehold.it/350x150" alt="" class="center">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
-			</div>
+	<h2 class="text--center">images <code>objects.images</code></h2>
+	<p>some examples showing images next to and around text depending on position</p>
+	<p><code>.img--left .img--right .center</code></p>
+	<div>
+		<img src="http://placehold.it/350x150" alt="" class="img--left">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+	</div>
+	<div>
+		<img src="http://placehold.it/350x150" alt="" class="img--right">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae est facere enim ea reiciendis nemo porro, veritatis, ratione nostrum! Necessitatibus ad consequatur at nemo expedita voluptatum. Adipisci aspernatur aperiam dolores.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati iusto quos, maiores qui ipsam omnis accusamus perspiciatis totam, neque doloribus doloremque error laboriosam eius sunt ducimus porro suscipit voluptas consequuntur.</p>
+	</div>
+	<div>
+		<img src="http://placehold.it/350x150" alt="" class="img--center">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
+	</div>
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-forms">
-		<h2 class="text--center">form elements (/objects/ forms.scss)</h2>
+		<h2 class="text--center">Forms <code>objects.form</code></h2>
 			<form action="#" class="form">
 				<div class="o-layout">
 					<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
