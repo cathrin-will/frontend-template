@@ -4,9 +4,13 @@ module.exports = function(grunt) {
 		jshint: {
 			beforeconcat: ['src/js/main.js', 'src/js/base/plugins/**.js'] // all we really want is for jshints to be turned on not to actually fail the file !
 		},
-		min: {
+		uglify: {
 			options: {
-				'report' : 'min'
+				'report' : 'min',
+				sourceMap: true,
+				mangle: true,
+				preserveComments: 'all'
+				// beautify: true,
 			},
 			files: {
 				src: [ 'src/js/base/vendor/*.js','src/js/base/plugins/*.js','src/js/main.js' ],
@@ -89,7 +93,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: ['src/js/**/*.js'],
-				tasks: ['min','insert_timestamp:js'],
+				tasks: ['uglify','insert_timestamp:js'],
 				options: { nospawn: true }
 			},
 			lint: {
@@ -112,11 +116,15 @@ module.exports = function(grunt) {
 		},
 		modernizr: {
 			dist: {
-				'devFile' : 'src/js/vendor/modernizr-custom.js',
-				'outputFile' : 'dist/js/vendor/modernizr-custom.min.js',
-				'files' : {
-					'src': ['dist/css/**/*.css','dist/js/main.min.js']
-				}
+			"parseFiles": true,
+				"customTests": [],
+				"devFile": "src/js/vendor/modernizr-custom.js",
+				"dest": "dist/js/vendor/modernizr-custom.min.js",
+				"tests": [],
+				"options": [
+					"setClasses"
+				],
+				"uglify": true
 			}
 		},
 		insert_timestamp: {
@@ -151,24 +159,40 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'dist/js',
-					src: ['**/*.js'],
+					src: ['**/*.min.js'],
 					dest: 'dist/js',
-					ext: '.js'
+					ext: '.min.js'
 				}]
-			}
+			},
+			// js: {
+			// 	options: {
+			// 		format: false,
+			// 		template: '// JS compiled on: {timestamp}\n\n',
+			// 		insertNewlines: false
+			// 	},
+			// 	files: [{
+			// 		expand: true,
+			// 		cwd: 'dist/js/vendor',
+			// 		src: ['**/*.js'],
+			// 		dest: 'dist/vendor/js',
+			// 		ext: '.js'
+			// 	}]
+			// }
 		},
 	});
 
 	// runs everything but watch,  and modernizr
-	grunt.registerTask('default', ['sass','postcss','copy','imagemin','tinypng','min','insert_timestamp']); // Default task(s)
+	grunt.registerTask('default', ['sass','postcss','copy','imagemin','tinypng','uglify','insert_timestamp']); // Default task(s)
 	// runs everything but watch
-	grunt.registerTask('all', ['sass','postcss','modernizr', 'copy','imagemin','tinypng','min','insert_timestamp','jshint']);
+	grunt.registerTask('all', ['sass','postcss','modernizr', 'copy','imagemin','tinypng','uglify','insert_timestamp','jshint']);
 	// runs all image minifiers
 	grunt.registerTask('images', ['imagemin','tinypng']);
 	// create finished css
 	grunt.registerTask('sassy', ['sass', 'postcss','insert_timestamp']);
 
-	grunt.loadNpmTasks('grunt-yui-compressor');
+	grunt.registerTask('min', ['uglify','insert_timestamp']);
+
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');

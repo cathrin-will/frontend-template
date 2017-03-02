@@ -2,5 +2,5 @@
 	<script>window.jQuery || document.write('<script src="/dist/js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="/dist/js/main.min.js"></script>
 	<script>
-		console.log("No GA tracking code added");
+		console.warn("No GA tracking code added");
 	</script>
