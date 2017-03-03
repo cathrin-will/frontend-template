@@ -2,13 +2,14 @@
 var main = (function() {
 	'use strict';
 
-
 /*------------------------------------*\
 	INIT
 \*------------------------------------*/
 	var init = function() {
-		// cookieControl();
-		// accessibleDropDown();
+		cookieControl();
+		accessibleDropDown();
+		smoothScroll();
+		console.log('here?');
 	};
 
 	return {
