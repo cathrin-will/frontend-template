@@ -1,15 +1,3 @@
 /*------------------------------------*\
 	$MIXINS
 \*------------------------------------*/
-
-@mixin columns($cols: 2, $gap: .5em, $fallback: true) {
-	@include vendor(column-count, $cols);
-	@include vendor(column-gap, $gap);
-	@if $fallback {
-		.no-csscolumns & > * { // old browsers get floats (so the order is changed), which is fine
-			float: left;
-			width: 100% / $cols;
-			padding-right: $gap;
-		}
-	}
-}

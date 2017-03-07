@@ -16,6 +16,17 @@
     "url": "https://github.com/cathrin-will/frontend-template/issues"
   },
   "homepage": "https://github.com/cathrin-will/frontend-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "eslint": "^3.16.1",
+    "modernizr": "^3.3.1",
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
+    "pixrem": "^3.0.2",
+    "postcss-cli": "^3.0.0-beta",
+    "uglify-js": "^2.8.5",
+    "img-tinyfy": "^1.1.8",
+  },
   "dependencies": {
     "inuitcss": "^6.0.0-beta.4"
   },
@@ -31,13 +42,6 @@
     "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
     "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
     "watch": "npm run watch-css & npm run watch-js & npm run watch-copy",
-    "images": "imageoptim -j -a -q -d -c dist/img/art",
-    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts"
-  },
-  "devDependencies": {
-    "grunt-tinypng": "^0.7.0",
-    "imageoptim": "^0.4.2",
-    "img-tinyfy": "^1.1.8",
-    "tinypng-tool": "0.0.7"
+    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts & grunt images"
   }
 }

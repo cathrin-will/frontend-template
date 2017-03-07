@@ -9,7 +9,7 @@ var main = (function() {
 		cookieControl();
 		accessibleDropDown();
 		smoothScroll();
-		console.log('here?');
+		console.log('heeeeeeeeeee');
 	};
 
 	return {

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="" /> <!-- keep it short! very short! -->
 	<!-- Mobile UI  -->
 	<meta name="apple-mobile-web-app-capable" content="yes">

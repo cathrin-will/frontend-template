@@ -1,0 +1,30 @@
+{
+  "name": "frontend-template",
+  "version": "2.0.0",
+  "description": "basic front-end template",
+  "main": "gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cathrin-will/frontend-template.git"
+  },
+  "keywords": [
+    "skeleton"
+  ],
+  "author": "AC Will",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cathrin-will/frontend-template/issues"
+  },
+  "homepage": "https://github.com/cathrin-will/frontend-template#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+  },
+  "dependencies": {
+    "inuitcss": "^6.0.0-beta.4"
+  },
+}

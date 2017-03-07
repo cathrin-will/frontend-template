@@ -1,0 +1,6 @@
+[alias]
+	st = status --branch --short
+	br = branch
+	wat = log --graph --decorate --oneline -15
+	com = commit -m
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

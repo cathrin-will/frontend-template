@@ -40,6 +40,8 @@ h1,h2,h3,h4,h5,h6,
 // font sizes are declared in settings/font-vars.scss
 h1,.u-h1 {
 	font-size: (30/16)+rem;
+	color: blue;
+	// transition: 1s;
 }
 
 h2,.u-h2 {
