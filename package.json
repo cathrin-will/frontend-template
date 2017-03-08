@@ -31,13 +31,18 @@
     "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
     "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
     "watch": "npm run watch-css & npm run watch-js & npm run watch-copy",
-    "images": "imageoptim -j -a -q -d -c dist/img/art",
-    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts"
+    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts & grunt images"
   },
   "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "eslint": "^3.17.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
     "grunt-tinypng": "^0.7.0",
-    "imageoptim": "^0.4.2",
-    "img-tinyfy": "^1.1.8",
-    "tinypng-tool": "0.0.7"
+    "modernizr": "^3.3.1",
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
+    "postcss-cli": "^3.0.0-beta",
+    "uglify-js": "^2.8.9"
   }
 }
