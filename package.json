@@ -20,10 +20,6 @@
     "autoprefixer": "^6.7.6",
     "cssnano": "^3.10.0",
     "eslint": "^3.16.1",
-    "eslint-config-google": "^0.7.1",
-    "eslint-config-standard": "^7.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-imagemin": "^1.0.1",
@@ -35,14 +31,9 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "^0.8.0",
     "grunt-tinypng": "^0.6.1",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-jsmin": "^0.1.5",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.1",
+    "modernizr": "^3.3.1",
     "node-sass": "^4.5.0",
-    "parallelshell": "^2.0.0",
+    "nodemon": "^1.11.0",
     "pixrem": "^3.0.2",
     "postcss-cli": "^3.0.0-beta",
     "uglify-js": "^2.8.5"
@@ -55,6 +46,13 @@
     "autoprefixer": "postcss --use autoprefixer --replace dist/css/main.css",
     "uglify": "uglifyjs src/js/main.js src/js/base/**/*.js --comments '/^!/' --mangle -o dist/js/main.min.js",
     "lint": "eslint src/js/main.js src/js/base/plugins/",
-    "all": "npm run sass --silent & npm run autoprefixer --silent && parallelshell \"npm run uglify --silent \" & grunt images"
+    "copy-fonts": "cp -R src/fonts/ dist/fonts/",
+    "copy-vendor": "cp -R src/js/vendor/ dist/js/vendor/",
+    "mod": "modernizr -c modernizr-config.json -d dist/js/vendor/modernizr-custom.min.js -u",
+    "watch-css": "nodemon -q -w src/sass/ -e 'scss' -x 'npm run sass & npm run autoprefixer'",
+    "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
+    "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
+    "watch": "npm run watch-css & npm run watch-js & npm run watch-copy",
+    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts & grunt images"
   }
 }
