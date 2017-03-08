@@ -48,7 +48,7 @@
     "lint": "eslint src/js/main.js src/js/base/plugins/",
     "copy-fonts": "cp -R src/fonts/ dist/fonts/",
     "copy-vendor": "cp -R src/js/vendor/ dist/js/vendor/",
-    "mod": "modernizr -c modernizr-config.json -d dist/js/vendor/modernizr-custom.min.js -u",
+    "mod": "modernizr -c modernizr-config.json -d dist/js/vendor/modernizr-custom.js -u",
     "watch-css": "nodemon -q -w src/sass/ -e 'scss' -x 'npm run sass & npm run autoprefixer'",
     "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
     "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
