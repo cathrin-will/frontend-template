@@ -53,6 +53,6 @@
     "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
     "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
     "watch": "npm run watch-css & npm run watch-js & npm run watch-copy",
-    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts & grunt images"
+    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts"
   }
 }
