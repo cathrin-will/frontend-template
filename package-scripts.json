@@ -1,0 +1,58 @@
+{
+  "name": "frontend-template",
+  "version": "2.0.0",
+  "description": "basic front-end template",
+  "main": "gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cathrin-will/frontend-template.git"
+  },
+  "keywords": [
+    "skeleton"
+  ],
+  "author": "AC Will",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cathrin-will/frontend-template/issues"
+  },
+  "homepage": "https://github.com/cathrin-will/frontend-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.16.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-insert-timestamp": "^0.1.0",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-postcss": "^0.8.0",
+    "grunt-tinypng": "^0.6.1",
+    "modernizr": "^3.3.1",
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
+    "pixrem": "^3.0.2",
+    "postcss-cli": "^3.0.0-beta",
+    "uglify-js": "^2.8.9"
+  },
+  "dependencies": {
+    "inuitcss": "^6.0.0-beta.4"
+  },
+  "scripts": {
+    "sass": "node-sass src/sass/main.scss --output-style compressed --source-map-root  --source-map  dist/css/main.css.map dist/css/main.css",
+    "autoprefixer": "postcss --use autoprefixer --replace dist/css/main.css",
+    "uglify": "uglifyjs src/js/main.js src/js/base/**/*.js --comments '/^!/' --mangle -o dist/js/main.min.js",
+    "lint": "eslint src/js/main.js src/js/base/plugins/",
+    "copy-fonts": "cp -R src/fonts/ dist/fonts/",
+    "copy-vendor": "cp -R src/js/vendor/ dist/js/vendor/",
+    "mod": "modernizr -c modernizr-config.json -d dist/js/vendor/modernizr-custom.js -u",
+    "watch-css": "nodemon -q -w src/sass/ -e 'scss' -x 'npm run sass & npm run autoprefixer'",
+    "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
+    "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
+    "watch": "npm run watch-css & npm run watch-js & npm run watch-copy",
+    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts"
+  }
+}
