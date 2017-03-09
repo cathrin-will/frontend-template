@@ -36,7 +36,7 @@
     "nodemon": "^1.11.0",
     "pixrem": "^3.0.2",
     "postcss-cli": "^3.0.0-beta",
-    "uglify-js": "^2.8.5"
+    "uglify-js": "^2.8.9"
   },
   "dependencies": {
     "inuitcss": "^6.0.0-beta.4"
