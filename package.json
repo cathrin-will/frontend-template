@@ -37,7 +37,7 @@
   "scripts": {
     "sass": "node-sass src/sass/main.scss --output-style compressed --source-map-root  --source-map  dist/css/main.css.map dist/css/main.css",
     "autoprefixer": "postcss --use autoprefixer --replace dist/css/main.css",
-    "uglify": "uglifyjs src/js/main.js src/js/base/**/*.js --comments '/^!/' --mangle -o dist/js/main.min.js",
+    "uglify": "uglifyjs src/js/base/vendor/*.js src/js/base/plugins/*.js src/js/main.js --comments '/^!/' --mangle -o dist/js/main.min.js",
     "lint": "eslint src/js/main.js src/js/base/plugins/",
     "copy-fonts": "copyfiles -u 2 src/fonts/**/* dist/fonts/",
     "copy-vendor": "copyfiles -u 3 src/js/vendor/* dist/js/vendor/",
