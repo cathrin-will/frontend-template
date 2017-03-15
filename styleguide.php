@@ -131,8 +131,8 @@
 		<!-- <h3>Primary Colours</h3> -->
 		<div class="o-layout">
 		<!-- 	<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--default  u-mb" style="padding-top: 40%;">
-					<div class="u-p- text--center" style="background: rgba(255,255,255,.5)">
+				<div class="bg--default  u-mb u-pt++">
+					<div class="u-p- text--center bg--ash">
 						<p class="u-mv0">$default</p>
 						<p class="u-mv0">######</p>
 					</div>
@@ -143,36 +143,36 @@
 				<p class="u-pb">Grey colours used throughout the site</p>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--ash  u-mb" style="padding-top: 40%;">
-					<div class="u-p- text--center" style="background: rgba(255,255,255,.5)">
+				<div class="bg--ash  u-mb u-pt++">
+					<div class="u-p- text--center bg--ash">
 						<p class="u-mv0">$ash</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--light-grey  u-mb" style="padding-top: 40%;">
-					<div class="u-p- text--center" style="background: rgba(255,255,255,.5)">
+				<div class="bg--light-grey  u-mb u-pt++">
+					<div class="u-p- text--center bg--ash">
 						<p class="u-mv0">$light-grey</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--mid-grey  u-mb" style="padding-top: 40%;">
-					<div class="u-p- text--center" style="background: rgba(255,255,255,.5)">
+				<div class="bg--mid-grey  u-mb u-pt++">
+					<div class="u-p- text--center bg--ash">
 						<p class="u-mv0">$mid-grey</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--dark-grey  u-mb" style="padding-top: 40%;">
-					<div class="u-p- text--center" style="background: rgba(255,255,255,.5)">
+				<div class="bg--dark-grey  u-mb u-pt++">
+					<div class="u-p- text--center bg--ash">
 						<p class="u-mv0">$dark-grey</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--charcoal  u-mb" style="padding-top: 40%;">
-					<div class="u-p- text--center" style="background: rgba(255,255,255,.5)">
+				<div class="bg--charcoal  u-mb u-pt++">
+					<div class="u-p- text--center bg--ash">
 						<p class="u-mv0">$charcoal</p>
 					</div>
 				</div>
@@ -186,23 +186,23 @@
 		<div class="o-layout">
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
 				<code class="u-mt- u-mb- block">.btn </code>
-				<a href="#" class="btn">button</a>
+				<a href="#placeholder" class="btn">button</a>
 			</div>
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
 				<code class="u-mt- u-mb- block">.btn > span.icon </code>
-					<a href="#" class="btn"> button <span class="icon-caret-right"></span></a>
+					<a href="#placeholder" class="btn"> button <span class="icon-caret-right"></span></a>
 			</div>
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
 				<code class="u-mt- u-mb- block">.btn.btn--sm </code>
-				<a href="#" class="btn  btn--sm">button</a>
+				<a href="#placeholder" class="btn  btn--sm">button</a>
 			</div>
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
 				<code class="u-mt- u-mb- block">.btn.btn--lg </code>
-				<a href="#" class="btn  btn--lg">button</a>
+				<a href="#placeholder" class="btn  btn--lg">button</a>
 			</div>
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/2@desk">
 				<code class="u-mt- u-mb- block">.btn.u-1/1 </code>
-				<a href="#" class="btn  u-1/1">button</a>
+				<a href="#placeholder" class="btn  u-1/1">button</a>
 			</div>
 			<div class="o-layout__item  u-1/1 u-1/2@lap  u-1/4@desk">
 				<code class="u-mt- u-mb- block">button.btn-bare </code>
@@ -321,27 +321,27 @@
 	<p>some examples showing images next to and around text depending on position</p>
 	<p><code>.img--left .img--right .center</code></p>
 	<div>
-		<img src="http://placehold.it/350x150" alt="" class="img--left">
+		<img src="http://placehold.it/350x150" alt="placeholder" class="img--left">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 	</div>
 	<div>
-		<img src="http://placehold.it/350x150" alt="" class="img--right">
+		<img src="http://placehold.it/350x150" alt="placeholder" class="img--right">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae est facere enim ea reiciendis nemo porro, veritatis, ratione nostrum! Necessitatibus ad consequatur at nemo expedita voluptatum. Adipisci aspernatur aperiam dolores.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati iusto quos, maiores qui ipsam omnis accusamus perspiciatis totam, neque doloribus doloremque error laboriosam eius sunt ducimus porro suscipit voluptas consequuntur.</p>
 	</div>
 	<div>
-		<img src="http://placehold.it/350x150" alt="" class="img--center">
+		<img src="http://placehold.it/350x150" alt="placeholder" class="img--center">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 	</div>
 </div><!-- /.wrapper -->
 <div class="o-wrapper"  id="sg-forms">
 		<h2 class="text--center">Forms <code>objects.form</code></h2>
-			<form action="#" class="form">
+			<form action="#" class="form" id="form">
 				<div class="o-layout">
 					<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
 						<label for="select">Label Select</label>
