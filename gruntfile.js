@@ -119,7 +119,7 @@ module.exports = function(grunt) {
 			"parseFiles": true,
 				"customTests": [],
 				"devFile": "src/js/vendor/modernizr-custom.js",
-				"dest": "dist/js/vendor/modernizr-custom.js",
+				"dest": "dist/js/vendor/modernizr-custom.min.js",
 				"tests": [],
 				"options": [
 					"setClasses"

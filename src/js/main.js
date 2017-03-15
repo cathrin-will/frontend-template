@@ -9,7 +9,6 @@ var main = (function() {
 		cookieControl();
 		accessibleDropDown();
 		smoothScroll();
-		console.log('here?');
 	};
 
 	return {
