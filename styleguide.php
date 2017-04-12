@@ -8,6 +8,7 @@
 	}
 </style>
 <body>
+<a href="#anchor">anchor</a>
 	<?php include("inc/header.php"); ?>
 <div class="o-wrapper">
 	<h1 class="text--center">XXX styleguide</h1>
@@ -124,6 +125,7 @@
 			</div>
 		</div><!-- /layout -->
 </div><!-- /.wrapper -->
+<div id="anchor">anchrop target</div>
 <div class="o-wrapper"  id="sg-colors">
 	<h2 class="text--center">Colour Palette <code>settings.global</code></h2>
 		<p>The official XXX colours</p>

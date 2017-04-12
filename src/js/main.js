@@ -1,23 +1,10 @@
-/*! Main */
-var main = (function() {
-	'use strict';
+// import './base/vendor/jquery.cookie.js';
+// import cookieControl from './base/plugins/cookieControl.js';
+var $ = require('jquery');
+window.jQuery = $;
+window.$ = $;
 
-/*------------------------------------*\
-	INIT
-\*------------------------------------*/
-	var init = function() {
-		cookieControl();
-		accessibleDropDown();
-		smoothScroll();
-	};
+import smoothScroll from './base/plugins/smoothScroll.js';
 
-	return {
-		init: init
-	};
-
-})();
-
-$(function() {
-	main.init();
-});
-
+smoothScroll();
+// cookieControl();

@@ -22,3 +22,5 @@ function cookieControl() {
 		Cookies.set('allow_cookies', '1', { expires: 365, path:'/' });
 	});
 }
+
+export default cookieControl;

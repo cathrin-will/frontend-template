@@ -2,7 +2,6 @@
   "name": "frontend-template",
   "version": "2.0.0",
   "description": "basic front-end template",
-  "main": "gruntfile.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cathrin-will/frontend-template.git"
@@ -17,35 +16,18 @@
   },
   "homepage": "https://github.com/cathrin-will/frontend-template#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.6",
-    "copyfiles": "^1.2.0",
-    "cssnano": "^3.10.0",
-    "eslint": "^3.16.1",
-    "grunt": "^1.0.1",
-    "grunt-contrib-imagemin": "^1.0.1",
-    "grunt-tinypng": "^0.6.1",
-    "modernizr": "^3.3.1",
-    "node-sass": "^4.5.0",
-    "nodemon": "^1.11.0",
-    "pixrem": "^3.0.2",
-    "postcss-cli": "^3.0.0-beta",
-    "uglify-js": "^2.8.9"
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "webpack": "^2.3.3"
   },
   "dependencies": {
-    "inuitcss": "^6.0.0-beta.4"
+    "inuitcss": "^6.0.0-beta.4",
+    "jquery": "^3.2.1",
+    "jshint": "^2.9.4",
+    "jshint-loader": "^0.8.4"
   },
   "scripts": {
-    "sass": "node-sass src/sass/main.scss --output-style compressed --source-map-root  --source-map  dist/css/main.css.map dist/css/main.css",
-    "autoprefixer": "postcss --use autoprefixer --replace dist/css/main.css",
-    "uglify": "uglifyjs src/js/base/vendor/*.js src/js/base/plugins/*.js src/js/main.js --comments '/^!/' --mangle -o dist/js/main.min.js",
-    "lint": "eslint src/js/main.js src/js/base/plugins/",
-    "copy-fonts": "copyfiles -u 2 src/fonts/**/* dist/fonts/",
-    "copy-vendor": "copyfiles -u 3 src/js/vendor/* dist/js/vendor/",
-    "mod": "modernizr -c modernizr-config.json -d dist/js/vendor/modernizr-custom.js -u",
-    "watch-css": "nodemon -q -w src/sass/ -e 'scss' -x 'npm run sass & npm run autoprefixer'",
-    "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
-    "watch-copy": "nodemon -q -w src/fonts/ -e 'svg,ttf,woff,otf' -x 'npm run copy-fonts & npm run copy-vendor'",
-    "watch": "npm run watch-css & npm run watch-js & npm run watch-copy",
-    "all": "npm run sass & npm run autoprefixer & npm run uglify & npm run mod & npm run copy-vendor & npm run copy-fonts"
+    "build": "webpack -p",
+    "watch": "webpack --watch"
   }
 }
