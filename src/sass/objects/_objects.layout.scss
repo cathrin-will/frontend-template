@@ -14,15 +14,3 @@
 .o-wrapper:not([class*=" bg--"])+.wrapper:not([class*=" bg--"]):not(footer):not(header) {
 	padding-top: 0;
 }
-
-.o-layout--middle {
-	.o-layout__item {
-		vertical-align: middle;
-	}
-}
-
-.o-layout--bottom {
-	.o-layout__item {
-		vertical-align: bottom;
-	}
-}

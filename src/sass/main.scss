@@ -135,16 +135,16 @@
 // @import "components/components.burger"; 		// nav burger menu
 
 // UTILITIES: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u-hidden {}).
-@import "../../node_modules/inuitcss/utilities/utilities.clearfix";
+// @import "../../node_modules/inuitcss/utilities/utilities.clearfix";
 @import "../../node_modules/inuitcss/utilities/utilities.widths";
 @import "../../node_modules/inuitcss/utilities/utilities.spacing";
-@import "../../node_modules/inuitcss/utilities/utilities.print";
+// @import "../../node_modules/inuitcss/utilities/utilities.print";
 // @import "../../node_modules/inuitcss/utilities/utilities.hide";
 @import "utilities/utilities.helper"; // includes text aligns, colours, js/no-js hide shows
 @import "utilities/utilities.typography";
 
 
-@import "utilities/utilities.lint"; // turn on/off to show html lint
+//@import "utilities/utilities.lint"; // turn on/off to show html lint
 
 
 
