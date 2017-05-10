@@ -1,5 +1,5 @@
 /*------------------------------------*\
-	Form
+	#Form
 \*------------------------------------*/
 
 input,
@@ -7,6 +7,7 @@ button,
 textarea,
 select {
 	width: 100%;
+
 	&:focus {
 		outline: 0; // outline will have no border-radius
 		border-color: #4d90fe !important; // these look like chromes default focus styles

@@ -1,6 +1,12 @@
 /*------------------------------------*\
-	Buttons
+	#Buttons
 \*------------------------------------*/
+/**
+ * Buttons can be applied to any HTML element that is used to trigger a user
+ * action (e.g. following a call to action link, submitting a form).
+ *
+ * 1. Line differently sized buttons up a little nicer.
+ */
 
 .btn-bare {
 	border: 0;
@@ -23,6 +29,7 @@
 	border-radius: $global-radius;
 	color: #fff;
 	background: $charcoal;
+
 	a:hover, a:focus &,
 	&:hover, &:focus {
 		color: #fff;
@@ -35,6 +42,8 @@
 	}
 }
 
+
+/* Size variants */
 .btn--lg {
 	font-size: (18/16)+rem;
 	padding: $global-spacing-unit*.75 $global-spacing-unit*2;
