@@ -1,2 +1,1 @@
-
-<a href="#main" class="visuallyhidden" accesskey="2" title="Skip to content">Skip</a>
+<a href="#main" class="header__skip js-skip">Skip to main content</a>
