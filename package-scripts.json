@@ -17,18 +17,21 @@
   },
   "homepage": "https://github.com/cathrin-will/frontend-template#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.6",
+    "autoprefixer": "^7.1.1",
+    "copyfiles": "^1.2.0",
     "cssnano": "^3.10.0",
-    "eslint": "^3.16.1",
+    "eslint": "^3.19.0",
     "grunt": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
-    "grunt-tinypng": "^0.6.1",
-    "modernizr": "^3.3.1",
-    "node-sass": "^4.5.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-insert-timestamp": "^0.1.0",
+    "grunt-tinypng": "^0.7.0",
+    "modernizr": "^3.5.0",
+    "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "pixrem": "^3.0.2",
-    "postcss-cli": "^3.0.0-beta",
-    "uglify-js": "^2.8.9"
+    "postcss-cli": "^4.0.0",
+    "uglify-js": "^3.0.11"
   },
   "dependencies": {
     "inuitcss": "^6.0.0-beta.4"
@@ -36,10 +39,10 @@
   "scripts": {
     "sass": "node-sass src/sass/main.scss --output-style compressed --source-map-root  --source-map  dist/css/main.css.map dist/css/main.css",
     "autoprefixer": "postcss --use autoprefixer --replace dist/css/main.css",
-    "uglify": "uglifyjs src/js/main.js src/js/base/**/*.js --comments '/^!/' --mangle -o dist/js/main.min.js",
+    "uglify": "uglifyjs src/js/base/vendor/*.js src/js/base/plugins/*.js src/js/main.js --comments '/^!/' --mangle -o dist/js/main.min.js",
     "lint": "eslint src/js/main.js src/js/base/plugins/",
-    "copy-fonts": "cp -R src/fonts/ dist/fonts/",
-    "copy-vendor": "cp -R src/js/vendor/ dist/js/vendor/",
+    "copy-fonts": "copyfiles -u 2 src/fonts/**/* dist/fonts/",
+    "copy-vendor": "copyfiles -u 3 src/js/vendor/* dist/js/vendor/",
     "mod": "modernizr -c modernizr-config.json -d dist/js/vendor/modernizr-custom.js -u",
     "watch-css": "nodemon -q -w src/sass/ -e 'scss' -x 'npm run sass & npm run autoprefixer'",
     "watch-js": "nodemon -q -w src/js/main.js -w src/js/base -e 'js' -x 'npm run uglify'",
