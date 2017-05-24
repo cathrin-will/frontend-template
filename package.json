@@ -17,21 +17,21 @@
   },
   "homepage": "https://github.com/cathrin-will/frontend-template#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.6",
+    "autoprefixer": "^7.1.1",
     "copyfiles": "^1.2.0",
     "cssnano": "^3.10.0",
-    "eslint": "^3.16.1",
+    "eslint": "^3.19.0",
     "grunt": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
-    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-uglify": "^3.0.1",
     "grunt-insert-timestamp": "^0.1.0",
-    "grunt-tinypng": "^0.6.1",
-    "modernizr": "^3.3.1",
-    "node-sass": "^4.5.0",
+    "grunt-tinypng": "^0.7.0",
+    "modernizr": "^3.5.0",
+    "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "pixrem": "^3.0.2",
-    "postcss-cli": "^3.0.0-beta",
-    "uglify-js": "^2.8.9"
+    "postcss-cli": "^4.0.0",
+    "uglify-js": "^3.0.11"
   },
   "dependencies": {
     "inuitcss": "^6.0.0-beta.4"
