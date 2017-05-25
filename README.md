@@ -12,8 +12,9 @@
 Once you have the relevant things installed you will have to run
 
 ```bash
-	npm install
+	npm/yarn install
 ```
+[yarn](https://yarnpkg.com/en/docs/install) is much faster than npm and can be additionally installed
 
 To run every task, recommended first time installed
 
