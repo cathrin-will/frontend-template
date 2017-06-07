@@ -10,6 +10,17 @@ body {
 	font: #{$font-size}/#{$line-height} $font-family;
 }
 
+body,
+.o-layout .o-layout__item {
+	// Minimum 16x, and grows more slowly
+	// (half the rate of screen growth)
+	font-size: calc(1rem + 0.5vw);
+
+	// Line-height based on font-size,
+	// with addition viewport-relative growth
+	line-height: calc(1.1em + 0.25vw);
+}
+
 a {
 	color: $link-color;
 	transition: $anim-speed;
@@ -39,27 +50,33 @@ h1,h2,h3,h4,h5,h6,
 // font size mixin can be found in tools/mixins.scss
 // font sizes are declared in settings/font-vars.scss
 h1,.u-h1 {
-	font-size: (30/16)+rem;
+	$size: (30/16)+rem;
+	font-size: calc(#{$size} + 0.75vw);
 }
 
 h2,.u-h2 {
-	font-size: (28/16)+rem;
+	$size: (28/16)+rem;
+	font-size: calc(#{$size} + 0.6vw);
 }
 
 h3,.u-h3 {
-	font-size: (26/16)+rem;
+	$size: (26/16)+rem;
+	font-size: calc(#{$size} + 0.5vw);
 }
 
 h4, .u-h4 {
-	font-size: (24/16)+rem;
+	$size: (24/16)+rem;
+	font-size: calc(#{$size} + 0.4vw);
 }
 
 h5, .u-h5 {
-	font-size: (22/16)+rem;
+	$size: (22/16)+rem;
+	font-size: calc(#{$size} + 0.3vw);
 }
 
 h6, .u-h6 {
-	font-size: (20/16)+rem;
+	$size: (20/16)+rem;
+	font-size: calc(#{$size} + 0.25vw);
 }
 
 p {
