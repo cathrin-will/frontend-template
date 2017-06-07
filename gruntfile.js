@@ -164,21 +164,18 @@ module.exports = function(grunt) {
 					ext: '.min.js'
 				}]
 			},
-			// js: {
-			// 	options: {
-			// 		format: false,
-			// 		template: '// JS compiled on: {timestamp}\n\n',
-			// 		insertNewlines: false
-			// 	},
-			// 	files: [{
-			// 		expand: true,
-			// 		cwd: 'dist/js/vendor',
-			// 		src: ['**/*.js'],
-			// 		dest: 'dist/vendor/js',
-			// 		ext: '.js'
-			// 	}]
-			// }
 		},
+		browserSync: {
+			dev: {
+				bsFiles: {
+					src : ['dist/css/main.css','dist/css/main.js','*.html','*.php']
+				},
+				options: {
+					watchTask: true,
+					proxy: "ac.fe"
+				}
+			}
+		}
 	});
 
 	// runs everything but watch,  and modernizr
@@ -192,6 +189,9 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('min', ['uglify','insert_timestamp']);
 
+	grunt.registerTask('browser', ['browserSync', 'watch']);
+
+	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
