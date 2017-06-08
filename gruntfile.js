@@ -172,7 +172,7 @@ module.exports = function(grunt) {
 				},
 				options: {
 					watchTask: true,
-					proxy: "ac.fe"
+					proxy: "fe.dev"
 				}
 			}
 		}
