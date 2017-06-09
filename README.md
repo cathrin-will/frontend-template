@@ -16,15 +16,15 @@ Once you have the relevant things installed you will have to run
 ```
 [yarn](https://yarnpkg.com/en/docs/install) is much faster than npm and can be additionally installed
 
-To run every task, recommended first time installed
-
-```bash
-	grunt all
-```
-
 To update npm packages https://www.npmjs.com/package/npm-check-updates
 ```bash
 	npm-check-updates -u
+```
+
+To run every task, recommended first time installed.
+
+```bash
+	grunt all
 ```
 
 ## Grunt Commands
@@ -50,12 +50,18 @@ To watch changes you make to js and sass files and compile as you work
 	grunt watch
 ```
 
+To open site in browser and refresh as you code
+- probably will need tweaking for indicidual set ups. [browsersync] (https://www.browsersync.io/)
+```bash
+	grunt browser
+```
+
 ## Browser Support
 *
 
-## CMS
+<!-- ## CMS
 can be found: /site-cms
 
 ## Credentials Link
 
-https://credentials.purple-agency.net/
+https://credentials.purple-agency.net/ -->
