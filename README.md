@@ -51,7 +51,7 @@ To watch changes you make to js and sass files and compile as you work
 ```
 
 To open site in browser and refresh as you code
-- probably will need tweaking for indicidual set ups. [browsersync](https://www.browsersync.io/)
+- probably will need tweaking for indicidual set ups. Check out [browsersync](https://www.browsersync.io/) for documentation
 ```bash
 	grunt browser
 ```
