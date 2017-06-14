@@ -5,20 +5,24 @@
 .cookie {
 	background: rgba($charcoal, .9);
 	color: #fff;
-	font-size: 0.9rem;
+	font-size: .9rem;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	display: none;
 	z-index: 9999;
+
 	.no-js & {
 		display: none;
 	}
+
 	a {
 		color: #fff;
 		text-decoration: underline;
 
-		&:hover, &:active, &:focus {
+		&:hover,
+		&:active,
+		&:focus {
 			text-decoration: none;
 		}
 	}
@@ -32,9 +36,12 @@
 	transition: $anim-speed;
 	margin-top: $global-spacing-unit/2;
 
-	&:hover, &:active, &:focus {
+	&:hover,
+	&:active,
+	&:focus {
 		opacity: 1;
 	}
+
 	@include mq($from: desk) {
 		font-size: (30/16)+rem;
 		position: absolute;

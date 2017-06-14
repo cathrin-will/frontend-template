@@ -45,6 +45,11 @@ To compile sass to css
 	grunt sassy
 ```
 
+To html/ js
+```bash
+	grunt lint
+```
+
 To watch changes you make to js and sass files and compile as you work
 ```bash
 	grunt watch

@@ -3,7 +3,7 @@
 <head itemscope itemtype="http://schema.org/Website">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>Home | Website</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 	<meta name="keywords" content="" /> <!-- keep it short! very short! -->
@@ -40,7 +40,7 @@
 	<!--  Styles -->
 	<link rel="stylesheet" href="/dist/css/main.css"/>
 	<!--  -->
-	<link rel="canonical" href="" />
+	<!-- <link rel="canonical" href="" /> -->
 	<link rel="shortcut icon" href="/favicon.ico">
 	<!-- Touch/favicons: use http://realfavicongenerator.net/ -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

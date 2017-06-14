@@ -165,6 +165,37 @@ module.exports = function(grunt) {
 				}]
 			},
 		},
+		htmllint: {
+			options: {
+				ignore:[
+				// php herrors
+				'Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.',
+				'Element “head” is missing a required instance of child element “title”.',
+				'End of file seen without seeing a doctype first. Expected “<!DOCTYPE html>”.',
+				'Saw “<?”. Probable cause: Attempt to use an XML processing instruction in HTML. (XML processing instructions are not supported in HTML.)'
+				],
+			},
+			all: ['**/*.php','**/*.html','!node_modules/**/*.*']
+		},
+		sasslint: {
+			options: {
+				// configFile: 'config/.sass-lint.yml',
+				formatter: 'junit',
+				// outputFile: 'report.xml'
+			},
+			target: ['src/sass/**/*.scss']
+		},
+		scsslint: {
+			allFiles: [
+				['src/sass/**/*.scss']
+			],
+			options: {
+				// bundleExec: true,
+				config: '.scss-lint.yml',
+				// reporterOutput: 'scss-lint-report.xml',
+				colorizeOutput: true
+			},
+		},
 		browserSync: {
 			dev: {
 				bsFiles: {
@@ -186,11 +217,16 @@ module.exports = function(grunt) {
 	grunt.registerTask('images', ['imagemin','tinypng']);
 	// create finished css
 	grunt.registerTask('sassy', ['sass', 'postcss','insert_timestamp']);
-
+	// create js files
 	grunt.registerTask('min', ['uglify','insert_timestamp']);
+
+	grunt.registerTask('lint', ['htmllint','jshint']);
 
 	grunt.registerTask('browser', ['browserSync', 'watch']);
 
+	grunt.loadNpmTasks('grunt-html');
+	grunt.loadNpmTasks('grunt-sass-lint');
+	grunt.loadNpmTasks('grunt-scss-lint');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');

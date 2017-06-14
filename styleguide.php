@@ -130,14 +130,6 @@
 		<p>There are two maps in <code>settings.global</code> to set up helper classes <code>.bg--[colour name]</code> and <code>.text--[colour name]</code>  only those added to the map will be generated</p>
 		<!-- <h3>Primary Colours</h3> -->
 		<div class="o-layout">
-		<!-- 	<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--default  u-mb u-pt++">
-					<div class="u-p- text--center bg--ash">
-						<p class="u-mv0">$default</p>
-						<p class="u-mv0">######</p>
-					</div>
-				</div>
-			</div> -->
 			<div class="o-layout__item">
 				<h3>Greys </h3>
 				<p class="u-pb">Grey colours used throughout the site</p>
