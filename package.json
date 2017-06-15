@@ -32,9 +32,8 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "^0.8.0",
     "grunt-tinypng": "^0.7.0",
-    "pixrem": "^3.0.2"
+    "pixrem": "^3.0.2",
+    "inuitcss": "^6.0.0-beta.4",
   },
-  "dependencies": {
-    "inuitcss": "^6.0.0-beta.4"
-  }
+  "dependencies": {}
 }
