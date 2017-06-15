@@ -23,7 +23,6 @@ module.exports = function(grunt) {
 			options: {
 				style: 'extended'
 				// style: 'compressed'
-				// compass: true
 			},
 			dist: {
 				files: {
@@ -177,25 +176,6 @@ module.exports = function(grunt) {
 			},
 			all: ['**/*.php','**/*.html','!node_modules/**/*.*']
 		},
-		sasslint: {
-			options: {
-				// configFile: 'config/.sass-lint.yml',
-				formatter: 'junit',
-				// outputFile: 'report.xml'
-			},
-			target: ['src/sass/**/*.scss']
-		},
-		scsslint: {
-			allFiles: [
-				['src/sass/**/*.scss']
-			],
-			options: {
-				// bundleExec: true,
-				config: '.scss-lint.yml',
-				// reporterOutput: 'scss-lint-report.xml',
-				colorizeOutput: true
-			},
-		},
 		browserSync: {
 			dev: {
 				bsFiles: {
@@ -216,17 +196,15 @@ module.exports = function(grunt) {
 	// runs all image minifiers
 	grunt.registerTask('images', ['imagemin','tinypng']);
 	// create finished css
-	grunt.registerTask('sassy', ['sass', 'postcss','insert_timestamp']);
+	grunt.registerTask('sassy', ['sass', 'postcss','insert_timestamp:css']);
 	// create js files
-	grunt.registerTask('min', ['uglify','insert_timestamp']);
+	grunt.registerTask('min', ['uglify','insert_timestamp:js']);
 
 	grunt.registerTask('lint', ['htmllint','jshint']);
 
 	grunt.registerTask('browser', ['browserSync', 'watch']);
 
 	grunt.loadNpmTasks('grunt-html');
-	grunt.loadNpmTasks('grunt-sass-lint');
-	grunt.loadNpmTasks('grunt-scss-lint');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');

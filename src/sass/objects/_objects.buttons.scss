@@ -30,8 +30,10 @@
 	color: #fff;
 	background: $charcoal;
 
-	a:hover, a:focus &,
-	&:hover, &:focus {
+	a:hover,
+	a:focus &,
+	&:hover,
+	&:focus {
 		color: #fff;
 		background: darken($charcoal, 10%);
 	}

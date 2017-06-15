@@ -14,11 +14,11 @@ body,
 .o-layout .o-layout__item {
 	// Minimum 16x, and grows more slowly
 	// (half the rate of screen growth)
-	font-size: calc(1rem + 0.5vw);
+	font-size: calc(1rem + .5vw);
 
 	// Line-height based on font-size,
 	// with addition viewport-relative growth
-	line-height: calc(1.1em + 0.25vw);
+	line-height: calc(1.1em + .25vw);
 }
 
 a {
@@ -31,15 +31,25 @@ a {
 	}
 }
 
-p a {
-	border-bottom: 1px dotted $link-color;
+p {
+	a {
+		border-bottom: 1px dotted $link-color;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 strong {
 	font-weight: $bold;
 }
 
-h1,h2,h3,h4,h5,h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .u-h1,
 .u-h2,
 .u-h3 {
@@ -52,43 +62,37 @@ h1,h2,h3,h4,h5,h6,
 h1,
 .u-h1 {
 	$size: (30/16)+rem;
-	font-size: calc(#{$size} + 0.75vw);
+	font-size: calc(#{$size} + .75vw);
 }
 
 h2,
 .u-h2 {
 	$size: (28/16)+rem;
-	font-size: calc(#{$size} + 0.6vw);
+	font-size: calc(#{$size} + .6vw);
 }
 
 h3,
 .u-h3 {
 	$size: (26/16)+rem;
-	font-size: calc(#{$size} + 0.5vw);
+	font-size: calc(#{$size} + .5vw);
 }
 
 h4,
 .u-h4 {
 	$size: (24/16)+rem;
-	font-size: calc(#{$size} + 0.4vw);
+	font-size: calc(#{$size} + .4vw);
 }
 
 h5,
 .u-h5 {
 	$size: (22/16)+rem;
-	font-size: calc(#{$size} + 0.3vw);
+	font-size: calc(#{$size} + .3vw);
 }
 
 h6,
 .u-h6 {
 	$size: (20/16)+rem;
-	font-size: calc(#{$size} + 0.25vw);
-}
-
-p {
-	&:last-child {
-		margin-bottom: 0;
-	}
+	font-size: calc(#{$size} + .25vw);
 }
 
 // colours map in settings.vars

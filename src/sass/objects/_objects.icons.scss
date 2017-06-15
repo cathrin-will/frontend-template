@@ -5,9 +5,9 @@
 @font-face {
 	font-family: 'icomoon';
 	src:
-	url('/dist/fonts/icons/icomoon.ttf') format('truetype'),
-	url('/dist/fonts/icons/icomoon.woff') format('woff'),
-	url('/dist/fonts/icons/icomoon.svg#icomoon') format('svg');
+		url('/dist/fonts/icons/icomoon.ttf') format('truetype'),
+		url('/dist/fonts/icons/icomoon.woff') format('woff'),
+		url('/dist/fonts/icons/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -32,29 +32,38 @@
 
 
 .icon-caret-right:before {
-	content: "\e900";
+	content: '\e900';
 }
+
 .icon-caret-left:before {
-	content: "\e901";
+	content: '\e901';
 }
+
 .icon-caret-up:before {
-	content: "\e902";
+	content: '\e902';
 }
+
 .icon-caret-down:before {
-	content: "\e903";
+	content: '\e903';
 }
+
 .icon-plus:before {
-	content: "\ea0a";
+	content: '\ea0a';
 }
+
 .icon-minus:before {
-	content: "\ea0b";
+	content: '\ea0b';
 }
+
 .icon-cancel-circle:before {
-	content: "\ea0d";
+	content: '\ea0d';
 }
+
 .icon-cross:before {
-	content: "\ea0f";
+	content: '\ea0f';
 }
+
 .icon-checkmark:before {
-	content: "\ea10";
+	content: '\ea10';
 }
+
