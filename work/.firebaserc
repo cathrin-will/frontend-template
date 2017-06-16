@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "weather-test-f07a5",
+    "staging": "weather-test-staging"
+  }
+}
