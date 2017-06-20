@@ -3,14 +3,14 @@
 \*------------------------------------*/
 
 ::-moz-selection {
-	background: $selection-color;
+	background-color: $selection-color;
 	color: #fff;
 	text-shadow: none;
 }
 
 
 ::selection {
-	background: $selection-color;
+	background-color: $selection-color;
 	color: #fff;
 	text-shadow: none;
 }

@@ -3,11 +3,10 @@
 \*------------------------------------*/
 
 body {
-	$font-size: 16px;
-	$line-height: 24px;
-	$font-family: $main-font;
+	font-size: 16px;
+	font-family: $main-font;
+	line-height: 24px;
 	color: $text-color;
-	font: #{$font-size}/#{$line-height} $font-family;
 }
 
 

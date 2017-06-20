@@ -29,20 +29,20 @@
 	padding: $global-spacing-unit/2 $global-spacing-unit;
 	border-radius: $global-radius;
 	color: #fff;
-	background: $charcoal;
+	background-color: $charcoal;
 
 	a:hover,
 	a:focus &,
 	&:hover,
 	&:focus {
 		color: #fff;
-		background: darken($charcoal, 10%);
+		background-color: darken($charcoal, 10%);
 	}
 
 	a:active &,
 	&:active {
 		color: #fff;
-		background: darken($charcoal, 20%);
+		background-color: darken($charcoal, 20%);
 	}
 }
 
