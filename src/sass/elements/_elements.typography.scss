@@ -10,6 +10,7 @@ body {
 	font: #{$font-size}/#{$line-height} $font-family;
 }
 
+
 body,
 .o-layout .o-layout__item {
 	// Minimum 16x, and grows more slowly
@@ -21,20 +22,24 @@ body,
 	line-height: calc(1.1em + .25vw);
 }
 
+
 a {
 	color: $link-color;
 	transition: $anim-speed;
 	text-decoration: none;
+
 	&:hover, &:active, &:focus {
 		text-decoration: none;
 		color: darken($link-color, 10%);
 	}
 }
 
+
 p {
 	a {
 		border-bottom: 1px dotted $link-color;
 	}
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -44,6 +49,9 @@ strong {
 	font-weight: $bold;
 }
 
+/* Headings
+========================================================================== */
+
 h1,
 h2,
 h3,
@@ -52,7 +60,10 @@ h5,
 h6,
 .u-h1,
 .u-h2,
-.u-h3 {
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
 	font-weight: $normal;
 	line-height: 1.5;
 }
@@ -65,11 +76,13 @@ h1,
 	font-size: calc(#{$size} + .75vw);
 }
 
+
 h2,
 .u-h2 {
 	$size: (28/16)+rem;
 	font-size: calc(#{$size} + .6vw);
 }
+
 
 h3,
 .u-h3 {
@@ -77,11 +90,13 @@ h3,
 	font-size: calc(#{$size} + .5vw);
 }
 
+
 h4,
 .u-h4 {
 	$size: (24/16)+rem;
 	font-size: calc(#{$size} + .4vw);
 }
+
 
 h5,
 .u-h5 {
@@ -89,16 +104,9 @@ h5,
 	font-size: calc(#{$size} + .3vw);
 }
 
+
 h6,
 .u-h6 {
 	$size: (20/16)+rem;
 	font-size: calc(#{$size} + .25vw);
-}
-
-// colours map in settings.vars
-//	creates .bg--purple ... bg--lime vars can be found in settings.vars
-@each $color, $hex in $text-colors {
-	.text--#{$color} {
-		color: #{$hex} !important;
-	}
 }

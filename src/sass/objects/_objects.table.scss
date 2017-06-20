@@ -2,10 +2,12 @@
 	#Table
 \*------------------------------------*/
 
+// table wrapper can used for unreponsiveiable tablkes so you can scroll them on mobile
 .table-wrapper {
 	overflow: scroll;
 	padding: 0 1px 0 0; // fix scroll removing right border
 }
+
 
 .table {
 	width: 100%;

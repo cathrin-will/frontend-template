@@ -7,10 +7,12 @@
 		float: left;
 		margin: 0 $global-spacing-unit $global-spacing-unit;
 	}
+
 	&--right {
 		float: right;
 		margin: 0 0 $global-spacing-unit $global-spacing-unit;
 	}
+
 	&--center {
 		display: block;
 		margin: 0 auto ;

@@ -11,11 +11,13 @@ textarea {
 	vertical-align: middle;
 }
 
+
 textarea {
 	resize: vertical;
 	min-height: $global-spacing-unit*6;
 	width: 100%;
 }
+
 
 :-moz-placeholder,
 :-ms-input-placeholder ,

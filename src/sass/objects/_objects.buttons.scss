@@ -1,6 +1,7 @@
 /*------------------------------------*\
 	#Buttons
 \*------------------------------------*/
+
 /**
  * Buttons can be applied to any HTML element that is used to trigger a user
  * action (e.g. following a call to action link, submitting a form).
@@ -46,7 +47,9 @@
 }
 
 
-/* Size variants */
+/* Size variants
+========================================================================== */
+
 .btn--lg {
 	font-size: (18/16)+rem;
 	padding: $global-spacing-unit*.75 $global-spacing-unit*2;

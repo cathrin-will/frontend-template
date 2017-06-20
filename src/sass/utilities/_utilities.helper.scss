@@ -16,6 +16,9 @@
 	@include inuit-hidden-visually();
 }
 
+
+/* mq helper classes
+========================================================================== */
 @if (variable-exists(mq-breakpoints)) {
 	@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
 		@include mq($from: $inuit-bp-name) {
@@ -30,6 +33,9 @@
 	}
 }
 
+
+/* bg color map
+========================================================================== */
 // colours maps in settings/_vars.scss
 @each $color, $hex in $bg-colors {
 	.bg--#{$color} {

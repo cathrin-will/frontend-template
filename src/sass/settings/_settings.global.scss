@@ -2,7 +2,8 @@
 	#Global
 \*------------------------------------*/
 
-// inuit specific
+/* Inuit specific
+========================================================================== */
 $global-radius: 3px !default;
 $global-transition: (1/3) + s !default;
 $inuit-wrapper-width: 1480px;
@@ -49,16 +50,16 @@ $mq-breakpoints: (
 $mq-show-breakpoints: (palm, tablet, lap, desk);
 
 
-//  custom
+/* font/text
+========================================================================== */
 $main-font: 	'Helvetica Neue', Helvetica, Arial, sans-serif;
 $light: 		300;
 $normal:		400;
 $bold:			700;
 
-/*------------------------------------*\
-	$COLORS
-\*------------------------------------*/
 
+/* colors
+========================================================================== */
 // main colors
 
 // greys
@@ -98,9 +99,8 @@ $social-instagram:	#517fa4;
 $social-pinterest:	#cb2027;
 $social-blogger:	#f83;
 
-/*------------------------------------*\
-	$MISC
-\*------------------------------------*/
+/* Misc
+========================================================================== */
 $border-radius: 	6px;
 $global-spacing-unit: 24px;
 // CSS transitions

@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 @media print {
+
 	*,
 	*:before,
 	*:after,
@@ -26,20 +27,22 @@
 	abbr[title]:after {
 		content: ' (" attr(title) ")';
 	}
+
 	a[href^="#"]:after,
 	a[href^="javascript:"]:after {
 		content: '';
 	}
+
 	pre,
 	blockquote {
 		border: 1px solid #999;
 		page-break-inside: avoid;
 	}
-	/*
-	 */
+
 	thead {
 		display: table-header-group;
 	}
+
 	tr,
 	img {
 		page-break-inside: avoid;
@@ -53,8 +56,10 @@
 		orphans: 3;
 		widows: 3;
 	}
+
 	h2,
 	h3 {
 		page-break-after: avoid;
 	}
+
 }

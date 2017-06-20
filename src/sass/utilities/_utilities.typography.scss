@@ -16,3 +16,13 @@
 		width: 100%;
 	}
 }
+
+/* text  mixer
+========================================================================== */
+// colours map in settings.vars
+//	creates .bg--purple ... bg--lime vars can be found in settings.vars
+@each $color, $hex in $text-colors {
+	.text--#{$color} {
+		color: #{$hex} !important;
+	}
+}
