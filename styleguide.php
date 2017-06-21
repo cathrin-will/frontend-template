@@ -336,26 +336,26 @@
 		<h2 class="text--center">Forms <code>objects.form</code></h2>
 		<form action="#" class="form" id="form">
 			<div class="o-layout">
-				<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
+				<div class="o-layout__item u-mb- u-1/4@lap text--right">
 					<label for="select">Label Select</label>
 				</div>
-				<div class="o-layout__item u-mb- u-3/4@lap u-1/1">
+				<div class="o-layout__item u-mb- u-3/4@lap">
 					<select name="select" id="select" class="u-1/2@lap">
 						<option value="0">Example</option>
 						<option value="1">1</option>
 						<option value="text">text</option>
 					</select>
 				</div>
-				<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
+				<div class="o-layout__item u-mb- u-1/4@lap text--right">
 					<label for="input">Label input</label>
 				</div>
-				<div class="o-layout__item u-mb- u-3/4@lap u-1/1">
+				<div class="o-layout__item u-mb- u-3/4@lap">
 					<input type="text" name="input" id="input" placeholder="placeholder" class="u-1/2@lap">
 				</div>
-				<div class="o-layout__item u-mb- u-1/4@lap u-1/1">
+				<div class="o-layout__item u-mb- u-1/4@lap text--right">
 					<label for="textarea">Label textarea</label>
 				</div>
-				<div class="o-layout__item u-mb- u-3/4@lap u-1/1">
+				<div class="o-layout__item u-mb- u-3/4@lap">
 					<textarea name="textarea" id="textarea" placeholder="placeholder" class="u-1/2@lap"></textarea>
 				</div>
 			</div>
