@@ -6,7 +6,8 @@
 	<title>Home | Website</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<meta name="keywords" content="" /> <!-- keep it short! very short! -->
+	<meta name="keywords" content="" />
+
 	<!-- Mobile UI  -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="">
@@ -22,6 +23,7 @@
 	<meta itemprop="name" content="">
 	<meta itemprop="description" content="">
 	<meta itemprop="image" content="">
+
 	<!-- Open Graph data -->
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content=""/>
@@ -29,6 +31,7 @@
 	<meta property="og:image" content=""/>
 	<meta property="og:description" content=""/>
 	<meta property="og:site_name" content="" />
+
 	<!-- Twitter Card data -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@">
@@ -37,17 +40,23 @@
 	<meta name="twitter:description" content="Page description less than 200 characters">
 	<meta name="twitter:image" content=""><!-- Twitter Summary card images must be at least 120x120px -->
 
+	<!-- preloaders -->
+	<link rel="preload" href="http://via.placeholder.com/7900x2000" as="image">
+
 	<!--  Styles -->
 	<link rel="stylesheet" href="/dist/css/main.css"/>
-	<!--  -->
+
 	<!-- <link rel="canonical" href="" /> -->
 	<link rel="shortcut icon" href="/favicon.ico">
+
 	<!-- Touch/favicons: use http://realfavicongenerator.net/ -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="/manifest.json">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-	<!--  -->
+
+	<!-- Modernizr -->
 	<script src="/dist/js/vendor/modernizr-custom.min.js"></script>
+
 </head>

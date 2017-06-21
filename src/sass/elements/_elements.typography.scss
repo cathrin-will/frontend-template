@@ -37,6 +37,10 @@ a {
 p {
 	a {
 		border-bottom: 1px dotted $link-color;
+
+		&:hover, &:active, &:focus {
+			border-bottom-style: solid;
+		}
 	}
 
 	&:last-child {
