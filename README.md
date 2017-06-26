@@ -45,7 +45,7 @@ To compile sass to css
 	grunt sassy
 ```
 
-To html/ js
+To html/js lint
 ```bash
 	grunt lint
 ```

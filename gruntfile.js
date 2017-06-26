@@ -167,7 +167,7 @@ module.exports = function(grunt) {
 		htmllint: {
 			options: {
 				ignore:[
-				// php herrors
+				// php errors
 				'Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.',
 				'Element “head” is missing a required instance of child element “title”.',
 				'End of file seen without seeing a doctype first. Expected “<!DOCTYPE html>”.',
@@ -179,7 +179,7 @@ module.exports = function(grunt) {
 		browserSync: {
 			dev: {
 				bsFiles: {
-					src : ['dist/css/main.css','dist/js/main.min.js','*.html','*.php']
+					src : ['dist/css/*.css','dist/js/*.min.js','*.html','*.php']
 				},
 				options: {
 					watchTask: true,
@@ -199,9 +199,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('sassy', ['sass', 'postcss','insert_timestamp:css']);
 	// create js files
 	grunt.registerTask('min', ['uglify','insert_timestamp:js']);
-
+	// linters
 	grunt.registerTask('lint', ['htmllint','jshint']);
-
+	//reload in browser
 	grunt.registerTask('browser', ['browserSync', 'watch']);
 
 	grunt.loadNpmTasks('grunt-html');

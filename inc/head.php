@@ -41,7 +41,7 @@
 	<meta name="twitter:image" content=""><!-- Twitter Summary card images must be at least 120x120px -->
 
 	<!-- preloaders -->
-	<link rel="preload" href="http://via.placeholder.com/7900x2000" as="image">
+	<!-- <link rel="preload" href="http://via.placeholder.com/7900x2000" as="image"> -->
 
 	<!--  Styles -->
 	<link rel="stylesheet" href="/dist/css/main.css"/>
