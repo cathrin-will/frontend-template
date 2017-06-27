@@ -80,7 +80,6 @@
 @import 'settings/settings.global';
 
 // TOOLS: Site-wide mixins and functions.
-@import '../../node_modules/inuitcss/tools/tools.rem';
 @import '../../node_modules/inuitcss/tools/tools.font-size';
 @import '../../node_modules/inuitcss/tools/tools.clearfix';
 @import '../../node_modules/inuitcss/tools/tools.hidden';
@@ -137,7 +136,7 @@
 // UTILITIES: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u-hidden {}).
 // @import '../../node_modules/inuitcss/utilities/utilities.clearfix';
 @import '../../node_modules/inuitcss/utilities/utilities.widths';
-@import '../../node_modules/inuitcss/utilities/utilities.spacing';
+@import '../../node_modules/inuitcss/utilities/utilities.spacings';
 // @import '../../node_modules/inuitcss/utilities/utilities.print';
 // @import '../../node_modules/inuitcss/utilities/utilities.hide';
 @import 'utilities/utilities.helper'; // includes text aligns, colours, js/no-js hide shows

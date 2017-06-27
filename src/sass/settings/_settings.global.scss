@@ -17,15 +17,17 @@ $inuit-offsets: false;
 
 $inuit-spacing-directions: (
 	null: null,
-	'-top': 't',
-	'-right': 'r',
-	'-bottom': 'b',
-	'-left': 'l',
+	't': '-top',
+	'r': '-right',
+	'b': '-bottom',
+	'l': '-left',
+	'h': '-left' '-right',
+	'v': '-top' '-bottom',
 ) !default;
 
 $inuit-spacing-properties: (
-	'padding': 'p',
-	'margin': 'm',
+	'p': 'padding',
+	'm': 'margin',
 ) !default;
 
 $inuit-spacing-sizes: (
