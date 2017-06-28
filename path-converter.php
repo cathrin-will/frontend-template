@@ -38,17 +38,19 @@
 
 		windowsPath.on('change keyup', function(){
 			var pathVal = windowsPath.val()
-			// pathVal = pathVal.replace(/W/g, 'smb');
-			pathVal = pathVal.replace(/[a-zA-Z]:\\/g, 'smb://bas1/5_Client Accounts/'); // change start 10.2.0.15
+			pathVal = pathVal.replace(/^\s/g, ''); // start with space deletion
+			pathVal = pathVal.replace(/^[a-zA-Z]:\\/g, 'smb://bas1/5_Client Accounts/'); // change any dirve starts (10.2.0.15)
+			pathVal = pathVal.replace(/^(file:)/g, ''); // starting with file
+			pathVal = pathVal.replace(/^(\\)*/g, ''); // starting with slashes
+			pathVal = pathVal.replace(/^(bas1|BAS1)/g, 'smb://bas1'); //starting with bas1 || BAS1
 			pathVal = pathVal.replace(/\\/g, '/'); // change slash direction
-			pathVal = pathVal.replace(/^(\/\/bas1\/)/g, 'smb://bas1/'); // bad starts
-			pathVal = pathVal.replace(/^(\/\/BAS1\/)/g, 'smb://bas1/'); // bad starts
-			pathVal = pathVal.replace(/^(Client Accounts)/g, 'smb://bas1/5_Client Accounts/'); // bad starts
-			pathVal = pathVal.replace(/^(BAS1 Client Accounts)/g, 'smb://bas1/5_Client Accounts/'); // bad starts
-			//pathVal = pathVal.replace(/\s/$, ''); // bad endss
+			pathVal = pathVal.replace(/^(Client Accounts)/g, 'smb://bas1/5_Client Accounts/');  //if it starts with client
+			pathVal = pathVal.replace(/^(BAS1 Client Accounts)/g, 'smb://bas1/5_Client Accounts/'); // if starts with bas and client
+			pathVal = pathVal.replace(/\s$/g, ''); // traling white space
+			// make the visual copy paste links
 			copyMac.text(pathVal);
 			copyWindows.text(windowsPath.val().replace(/%20/g, '\s'));
-
+			// ready for linking
 			pathVal = pathVal.replace(/\s/g, '%20'); // make spaces
 			macPath.val(pathVal) // upate visual input
 			outputPathMac.attr('href',pathVal);
