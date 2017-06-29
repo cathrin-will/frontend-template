@@ -239,16 +239,16 @@
 		<h2 class="text--center">Lists <code>objects.lists</code></h2>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/2@lap u-1/4@desk">
-				<p><strong><code>list--bare .list--inline</code></strong></p>
-				<ul class="list--bare  list--inline">
+				<p><strong><code>.o-list-bare</code></strong></p>
+				<ul class="o-list-bare">
 					<li>List item</li>
 					<li>List item</li>
 					<li>List item</li>
 				</ul>
 			</div>
 			<div class="o-layout__item u-1/2@lap u-1/4@desk">
-				<p><strong><code>.list--bare</code></strong></p>
-				<ul class="list--bare">
+				<p><strong><code>.o-list-inline</code></strong></p>
+				<ul class="o-list-inline">
 					<li>List item</li>
 					<li>List item</li>
 					<li>List item</li>

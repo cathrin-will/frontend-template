@@ -97,7 +97,7 @@
 @import 'generic/generic.general';
 
 // ELEMENTS: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
-@import '../../node_modules/inuitcss/elements/elements.page';
+@import 'elements/elements.page';
 @import '../../node_modules/inuitcss/elements/elements.images';
 @import '../../node_modules/inuitcss/elements/elements.tables';
 @import 'elements/elements.typography';	// - h1-h6, a, p

@@ -1,0 +1,14 @@
+/*------------------------------------*\
+	$Page
+\*------------------------------------*/
+
+html {
+	font-size: ($inuit-global-font-size / 16px) * 1em;
+	line-height: $inuit-global-line-height / $inuit-global-font-size;
+	overflow-y: scroll;
+	min-height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
