@@ -4,9 +4,9 @@
 		<div class="o-wrapper">
 			<h1>Path converter</h1>
 			<h2>Windows</h2>
-			<p>e.g. W:\Honeywell\3. Live Jobs\Honeywell Home\121464 - Honeywell UK_Lyric & Evo Campaign\Studio\Phase 2\6. Honeywell UK Website\DR1\</p>
+			<p>e.g. W:\Client\3. Live Jobs\Client Home\123456 - Client UK Campaign\Studio\Phase 2\6. Client UK Website\DR1\</p>
 			<h2>Mac</h2>
-			<p>smb://bas1/5_Client Accounts/Merck Global/3. Live Jobs/120767_UC Bi-Monthly Digital Campaign 2017/120767A_UC Bi-Monthly Digital Campaign 2017 Module 2 Quiz/Final Files/DEV</p>
+			<p>smb://bas1/5_Client Accounts/Client/3. Live Jobs/Client Home/123456 - Client UK Campaign/Studio/Phase 2/6. Client UK Website/DR1/</p>
 			<div class="o-layout">
 				<div class="o-layout__item u-1/1">
 					<div class="o-layout u-mb">
@@ -15,11 +15,11 @@
 						<div class="o-layout__item text--center"><label for="mac-path">Mac path</label></div>
 						<div class="o-layout__item"><input type="text" id="mac-path" class="u-mb text--small" style="font-size: 1rem"></div>
 						<div class="o-layout__item u-1/2@tablet text--center"><a href="#" class="btn" id="output-path-mac" target="_blank">Open link in finder (Mac)</a></div>
-						<div class="o-layout__item u-1/2@tablet text--center"><a href="#" class="btn" id="output-path-windows" target="_blank">Open link in Explorer (Windows)</a></div>
+						<div class="o-layout__item u-1/2@tablet text--center"><!-- <a href="#" class="btn" id="output-path-windows" target="_blank">Open link in Explorer (Windows)</a> --></div>
 					</div>
 					<p>Copy and paste for emails</p>
 					<div style="font-size: 16px;">
-						<p>Windows link: <a href="" id="copy-windows"></a>
+						<p>Windows link: <span id="copy-windows"></span>
 						<br>
 						Mac Link: <a href="" id="copy-mac"></a></p>
 					</div>
@@ -44,15 +44,18 @@
 			pathVal = pathVal.replace(/^(\\)*/g, ''); // starting with slashes
 			pathVal = pathVal.replace(/^(bas1|BAS1)/g, 'smb://bas1'); //starting with bas1 || BAS1
 			pathVal = pathVal.replace(/\\/g, '/'); // change slash direction
+			pathVal = pathVal.replace(/^(5_Client Accounts)/g, 'smb://bas1/5_Client Accounts/');  //if it starts with client
 			pathVal = pathVal.replace(/^(Client Accounts)/g, 'smb://bas1/5_Client Accounts/');  //if it starts with client
 			pathVal = pathVal.replace(/^(BAS1 Client Accounts)/g, 'smb://bas1/5_Client Accounts/'); // if starts with bas and client
 			pathVal = pathVal.replace(/\s$/g, ''); // traling white space
 			// make the visual copy paste links
 			copyMac.text(pathVal);
 			copyWindows.text(windowsPath.val().replace(/%20/g, '\s'));
+
+			macPath.val(pathVal) // upate visual input
 			// ready for linking
 			pathVal = pathVal.replace(/\s/g, '%20'); // make spaces
-			macPath.val(pathVal) // upate visual input
+
 			outputPathMac.attr('href',pathVal);
 			copyMac.attr('href',pathVal);
 			copyWindows.attr('href',windowsPath.val());
@@ -71,9 +74,9 @@
 			//pathVal = pathVal.replace(/\s/$, ''); // bad endss
 			copyWindows.text(pathVal);
 			copyMac.text(macPath.val().replace(/%20/g, '\s'));
-
-			pathVal = pathVal.replace(/\s/g, '%20'); // make spaces
 			windowsPath.val(pathVal) // upate visual input
+			pathVal = pathVal.replace(/\s/g, '%20'); // make spaces
+
 			outputPathWindows.attr('href',pathVal);
 			copyWindows.attr('href',pathVal);
 			copyMac.attr('href',macPath.val().replace(/\s/g, '%20'));
