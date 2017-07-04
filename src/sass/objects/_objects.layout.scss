@@ -15,3 +15,108 @@
 .o-wrapper:not([class*=" bg--"])+.wrapper:not([class*=" bg--"]):not(footer):not(header) {
 	padding-top: 0;
 }
+
+
+/*------------------------------------*\
+	#Grid trys
+\*------------------------------------*/
+$gridcss-fractions: 1 2 3 4 !default;
+
+.o-grid {
+	display: grid;
+	// grid-template-columns: 1fr;
+	grid-gap: $global-spacing-unit/2;
+}
+
+// .o-grid--2 {
+// 	@include mq($from: tablet) {
+// 		grid-template-columns: 1fr 1fr;
+// 	}
+// }
+
+// .o-grid--3 {
+// 	@include mq($from: lap) {
+// 		grid-template-columns: 1fr 1fr 1fr;
+// 	}
+// }
+
+// .o-grid--4 {
+
+// 	@include mq($from: tablet) {
+// 		grid-template-columns: 1fr 1fr;
+// 	}
+// 	@include mq($from: desk) {
+// 		grid-template-columns: 1fr 1fr 1fr 1fr;
+// 	}
+// }
+
+
+@mixin grid-maker($columns, $breakpoint: null) {
+  // Loop through the number of columns for each denominator of our fractions.
+  @each $denominator in $columns {
+    // Begin creating a numerator for our fraction up until we hit the
+    // denominator.
+    // @for $numerator from 1 through $denominator {
+      // Build a class in the format `.u-3/4[@<breakpoint>]`.
+      .o-grid--#{$denominator}#{$breakpoint} {
+        // grid-template-rows: repeat($denominator, ( 1 / $denominator) * 100%);
+        grid-template-columns: repeat($denominator, 1fr);
+      }
+    // }
+  }
+}
+
+@include grid-maker($gridcss-fractions);
+
+/*------------------------------------*\
+	#flex trys
+\*------------------------------------*/
+.o-flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.o-flex--col { flex-direction: column;}
+.o-flex--col-rev { flex-direction: column-reverse; }
+.o-flex--row-rev { flex-direction: row-reverse; }
+
+.flex__item {
+	flex: 0 1 auto;
+}
+
+$flex-fractions: 1 2 3 4 !default;
+
+@mixin flex-maker($columns, $breakpoint: null) {
+
+  // Loop through the number of columns for each denominator of our fractions.
+  @each $denominator in $columns {
+
+    // Begin creating a numerator for our fraction up until we hit the
+    // denominator.
+    @for $numerator from 1 through $denominator {
+
+      // Build a class in the format `.u-3/4[@<breakpoint>]`.
+      .u-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+        flex: 0 1 ($numerator / $denominator) * 100% !important;
+      }
+
+    }
+
+  }
+}
+@include flex-maker($flex-fractions);
+
+
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+    @include mq($from: $inuit-bp-name) {
+       @include flex-maker($flex-fractions, #{$inuit-widths-breakpoint-separator}#{$inuit-bp-name});
+       .o-flex--col#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} { flex-direction: column;}
+		.o-flex--col-rev#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} { flex-direction: column-reverse; }
+		.o-flex--row-rev#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} { flex-direction: row-reverse; }
+    }
+  }
+

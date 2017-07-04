@@ -28,6 +28,7 @@
 			<li>desk:		1200px</li>
 		</ul>
 		<p>The spacing of layout items (and much more throughtout the site) is based on the variable <code>$global-spacing-unit</code>, for this project it is 24px.</p>
+		<h2>Inline block</h2>
 		<div class="o-layout text--center">
 			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
 				<p class="bg--ash u-mb-"> 1/4</p>
@@ -41,7 +42,7 @@
 			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
 				<p class="bg--ash u-mb-"> 1/4</p>
 			</div>
-			<div class="o-layout__item u-1/3@lap">
+			<div class="o-layout__item">
 				<p class="bg--ash u-mb-"> 1/3</p>
 			</div>
 			<div class="o-layout__item u-1/3@lap">
@@ -60,6 +61,84 @@
 				<p class="bg--ash u-mb-"> 1</p>
 			</div>
 		</div><!-- /o-layout -->
+		<h2>Gridcss</h2>
+		<div class="o-grid  o-grid--4 text--center u-mb-">
+			<div class="o-grid__item ">
+				<p class="bg--ash"> 1/4</p>
+			</div>
+			<div class="o-grid__item ">
+				<p class="bg--ash"> 1/4</p>
+			</div>
+			<div class="o-grid__item ">
+				<p class="bg--ash"> 1/4</p>
+			</div>
+			<div class="o-grid__item ">
+				<p class="bg--ash"> 1/4</p>
+			</div>
+		</div>
+		<div class="o-grid  o-grid--3 text--center u-mb-">
+			<div class="o-grid__item">
+				<p class="bg--ash"> 1/3</p>
+			</div>
+			<div class="o-grid__item">
+				<p class="bg--ash"> 1/3</p>
+			</div>
+			<div class="o-grid__item">
+				<p class="bg--ash"> 1/3</p>
+			</div>
+		</div>
+		<div class="o-grid  o-grid--2 text--center u-mb-">
+			<div class="o-grid__item">
+				<p class="bg--ash"> 1/2</p>
+			</div>
+			<div class="o-grid__item">
+				<p class="bg--ash"> 1/2</p>
+			</div>
+		</div>
+		<div class="o-grid  o-grid--1 text--center u-mb-">
+			<div class="o-grid__item">
+				<p class="bg--ash"> 1</p>
+			</div>
+		</div><!-- /o-grid -->
+		<h2>Flex</h2>
+		<div class="o-flex text--center">
+			<div class="o-flex__item u-1/1 u-1/2@tablet u-1/4@lap">
+				<p class="bg--ash u-mb-"> 1/4</p>
+			</div>
+			<div class="o-flex__item u-1/1 u-1/2@tablet u-1/4@lap">
+				<p class="bg--ash u-mb-"> 1/4</p>
+			</div>
+			<div class="o-flex__item u-1/1 u-1/2@tablet u-1/4@lap">
+				<p class="bg--ash u-mb-"> 1/4</p>
+			</div>
+			<div class="o-flex__item u-1/1 u-1/2@tablet u-1/4@lap">
+				<p class="bg--ash u-mb-"> 1/4</p>
+			</div>
+		</div>
+		<div class="o-flex o-flex--col-rev o-flex--col@tablet text--center">
+			<div class="o-flex__item u-1/3">
+				<p class="bg--ash u-mb-">A 1/3</p>
+			</div>
+			<div class="o-flex__item u-1/3">
+				<p class="bg--ash u-mb-">B 1/3</p>
+			</div>
+			<div class="o-flex__item u-1/3">
+				<p class="bg--ash u-mb-">C 1/3</p>
+			</div>
+		</div>
+		<div class="o-flex o-flex--row-rev text--center">
+			<div class="o-flex__item u-1/2">
+				<p class="bg--ash u-mb-">A 1/2</p>
+			</div>
+			<div class="o-flex__item u-1/2">
+				<p class="bg--ash u-mb-">B 1/2</p>
+			</div>
+		</div>
+		<div class="o-flex text--center">
+			<div class="o-flex__item u-1/1 u-mb">
+				<p class="bg--ash u-mb-"> 1</p>
+			</div>
+		</div><!-- /o-flex -->
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-helper">
