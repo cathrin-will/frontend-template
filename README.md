@@ -14,17 +14,24 @@ Once you have the relevant things installed you will have to run
 ```bash
 	npm/yarn install
 ```
-[yarn](https://yarnpkg.com/en/docs/install) is much faster than npm and can be additionally installed
-
-To update npm packages https://www.npmjs.com/package/npm-check-updates
-```bash
-	npm-check-updates -u
-```
+[yarn](https://yarnpkg.com/en/docs/install) is much faster than npm4- and can be additionally installed
 
 To run every task, recommended first time installed.
 
 ```bash
 	grunt all
+```
+
+## Updating things
+
+Updating NPM
+```bash
+npm i -g npm
+```
+
+To update npm packages https://www.npmjs.com/package/npm-check-updates
+```bash
+	npm-check-updates -u
 ```
 
 ## Grunt Commands
