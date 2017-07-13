@@ -2,13 +2,15 @@
 	#Cookie
 \*------------------------------------*/
 
-.cookie {
+.c-cookie {
 	background-color: rgba($charcoal, .9);
 	color: #fff;
-	font-size: .9rem;
+	font-size: 1rem;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	left: 0;
+	right: 0;
 	display: none;
 	z-index: 9999;
 
@@ -29,12 +31,12 @@
 }
 
 
-.cookie__close {
+.c-cookie__close {
 	color: #fff;
-	font-size: (50/16)+rem;
+	font-size: 1rem;
 	cursor: pointer;
 	opacity: .8;
-	transition: $anim-speed;
+	transition: $global-transition;
 	margin-top: $global-spacing-unit/2;
 
 	&:hover,
@@ -44,7 +46,6 @@
 	}
 
 	@include mq($from: desk) {
-		font-size: (30/16)+rem;
 		position: absolute;
 		top: 50%;
 		margin-top: -15px;

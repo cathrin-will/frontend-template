@@ -26,7 +26,7 @@
 				display: none !important;
 				position: absolute;
 			}
-			.text--center#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
+			.u-text--center#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
 				text-align: center !important;
 			}
 		}
@@ -38,7 +38,7 @@
 ========================================================================== */
 // colours maps in settings/_vars.scss
 @each $color, $hex in $bg-colors {
-	.bg--#{$color} {
+	.u-bg--#{$color} {
 		background-color: #{$hex} !important;
 	}
 }

@@ -15,61 +15,86 @@
 .o-wrapper:not([class*=" bg--"])+.wrapper:not([class*=" bg--"]):not(footer):not(header) {
 	padding-top: 0;
 }
+/*------------------------------------*\
+	#Layout - display inline block grid
+\*------------------------------------*/
+// display inline-block layout is mostly based on https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.layout.scss
+// grid and flex are using similar mixins but add ons
+.o-layout {
+	display: block;
+	margin:  0;
+	padding: 0;
+	list-style: none;
+	margin-left: -$global-spacing-unit;
+	font-size: 0;
+}
 
+.o-layout__item {
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	padding-left: $global-spacing-unit;
+	font-size: 1rem;
+}
+
+.o-layout--middle {
+	.o-layout__item {
+		vertical-align: middle;
+	}
+}
+
+// A mixin to spit out our width classes. Pass in the columns we want the widths
+// to have, and an optional suffix for responsive widths. E.g. to create thirds
+// and quarters for a small breakpoint:
+
+@mixin block-maker($columns, $breakpoint: null) {
+	// Loop through the number of columns for each denominator of our fractions.
+	@each $denominator in $columns {
+		// Begin creating a numerator for our fraction up until we hit the denominator.
+		@for $numerator from 1 through $denominator {
+			// Build a class in the format `.u-3/4[@<breakpoint>]`.
+			.u-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+				width: ($numerator / $denominator) * 100% !important;
+			}
+		}
+	}
+}
+
+@include block-maker($grid-fractions);
 
 /*------------------------------------*\
-	#Grid trys
+	#Gridcss
 \*------------------------------------*/
-$gridcss-fractions: 1 2 3 4 !default;
 
 .o-grid {
 	display: grid;
-	// grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
 	grid-gap: $global-spacing-unit/2;
 }
 
-// .o-grid--2 {
-// 	@include mq($from: tablet) {
-// 		grid-template-columns: 1fr 1fr;
-// 	}
-// }
-
-// .o-grid--3 {
-// 	@include mq($from: lap) {
-// 		grid-template-columns: 1fr 1fr 1fr;
-// 	}
-// }
-
-// .o-grid--4 {
-
-// 	@include mq($from: tablet) {
-// 		grid-template-columns: 1fr 1fr;
-// 	}
-// 	@include mq($from: desk) {
-// 		grid-template-columns: 1fr 1fr 1fr 1fr;
-// 	}
-// }
-
+// TODO - create mixin for these classes
+.o-grid__item-2x2#{$widths-breakpoint-separator}tablet {
+	@include mq($from: tablet) {
+		grid-row: span 2;
+		grid-column: span 2;
+	}
+}
 
 @mixin grid-maker($columns, $breakpoint: null) {
-  // Loop through the number of columns for each denominator of our fractions.
-  @each $denominator in $columns {
-    // Begin creating a numerator for our fraction up until we hit the
-    // denominator.
-    // @for $numerator from 1 through $denominator {
-      // Build a class in the format `.u-3/4[@<breakpoint>]`.
-      .o-grid--#{$denominator}#{$breakpoint} {
-        // grid-template-rows: repeat($denominator, ( 1 / $denominator) * 100%);
-        grid-template-columns: repeat($denominator, 1fr);
-      }
-    // }
-  }
+	// Loop through the number of columns for each denominator of our fractions.
+	@each $denominator in $columns {
+		.o-grid--#{$denominator}#{$breakpoint} {
+			// grid-template-rows: repeat($denominator, ( 1 / $denominator) * 100%);
+			grid-template-columns: repeat($denominator, 1fr);
+		}
+	}
 }
 
 @include grid-maker($gridcss-fractions);
 
 /*------------------------------------*\
-	#flex trys
+	#flex
 \*------------------------------------*/
 .o-flex {
 	display: flex;
@@ -84,39 +109,44 @@ $gridcss-fractions: 1 2 3 4 !default;
 .o-flex--col-rev { flex-direction: column-reverse; }
 .o-flex--row-rev { flex-direction: row-reverse; }
 
-.flex__item {
+.o-flex__item {
 	flex: 0 1 auto;
 }
 
-$flex-fractions: 1 2 3 4 !default;
-
 @mixin flex-maker($columns, $breakpoint: null) {
-
-  // Loop through the number of columns for each denominator of our fractions.
-  @each $denominator in $columns {
-
-    // Begin creating a numerator for our fraction up until we hit the
-    // denominator.
-    @for $numerator from 1 through $denominator {
-
-      // Build a class in the format `.u-3/4[@<breakpoint>]`.
-      .u-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
-        flex: 0 1 ($numerator / $denominator) * 100% !important;
-      }
-
-    }
-
-  }
+	// Loop through the number of columns for each denominator of our fractions.
+	@each $denominator in $columns {
+		// Begin creating a numerator for our fraction up until we hit the denominator.
+		@for $numerator from 1 through $denominator {
+			// Build a class in the format `.u-3/4[@<breakpoint>]`.
+			.u-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+				flex: 0 1 ($numerator / $denominator) * 100% !important;
+			}
+		}
+	}
 }
+
 @include flex-maker($flex-fractions);
+// flex uses the same classes as inline block for the widths - the percentage widths  don't interfer with flex and can be used as a fallback for older browsers
 
+/**
+ * Automatically generate grid system(s) for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-3/12@mobile">
+ * <div class=".o-grid--1">
+ */
 
-  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
-    @include mq($from: $inuit-bp-name) {
-       @include flex-maker($flex-fractions, #{$inuit-widths-breakpoint-separator}#{$inuit-bp-name});
-       .o-flex--col#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} { flex-direction: column;}
-		.o-flex--col-rev#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} { flex-direction: column-reverse; }
-		.o-flex--row-rev#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} { flex-direction: row-reverse; }
-    }
-  }
+@each $bp-name, $bp-value in $mq-breakpoints {
+	@include mq($from: $bp-name) {
+		@include block-maker($grid-fractions, #{$widths-breakpoint-separator}#{$bp-name});
+		@include grid-maker($gridcss-fractions, #{$widths-breakpoint-separator}#{$bp-name});
+		@include flex-maker($flex-fractions, #{$widths-breakpoint-separator}#{$bp-name});
+		.o-flex--col#{$widths-breakpoint-separator}#{$bp-name} { flex-direction: column;}
+		.o-flex--col-rev#{$widths-breakpoint-separator}#{$bp-name} { flex-direction: column-reverse; }
+		.o-flex--row#{$widths-breakpoint-separator}#{$bp-name} { flex-direction: row; }
+		.o-flex--row-rev#{$widths-breakpoint-separator}#{$bp-name} { flex-direction: row-reverse; }
+	}
+}
+
 

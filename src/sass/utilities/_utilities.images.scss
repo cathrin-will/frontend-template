@@ -1,0 +1,18 @@
+/*------------------------------------*\
+	#Images
+\*------------------------------------*/
+
+.u-img--left {
+	float: left;
+	margin: 0 $global-spacing-unit $global-spacing-unit;
+}
+
+.u-img--right {
+	float: right;
+	margin: 0 0 $global-spacing-unit $global-spacing-unit;
+}
+
+.u-img--center {
+	display: block;
+	margin: 0 auto ;
+}

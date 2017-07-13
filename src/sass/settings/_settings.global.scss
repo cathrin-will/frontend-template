@@ -7,7 +7,10 @@
 $global-radius: 3px !default;
 $global-transition: (1/3) + s !default;
 $inuit-wrapper-width: 1480px;
-$inuit-fractions: 1 2 3 4;
+$grid-fractions: 1 2 3 4 5 7 !default;
+$flex-fractions: 1 3 6 !default;
+$gridcss-fractions: 3 5 !default;
+$gridcss-spans: 2!default;
 $inuit-offsets: true;
 $inuit-widths-breakpoint-separator: \@ !default;
 $plus: \+;

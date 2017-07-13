@@ -9,13 +9,13 @@
  * 1. Line differently sized buttons up a little nicer.
  */
 
-.btn-bare {
+.o-btn-bare {
 	border: 0;
 	background: 0;
 	padding: 0;
 }
 
-.btn {
+.o-btn {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
@@ -50,12 +50,12 @@
 /* Size variants
 ========================================================================== */
 
-.btn--lg {
+.o-btn--lg {
 	font-size: (18/16)+rem;
 	padding: $global-spacing-unit*.75 $global-spacing-unit*2;
 }
 
-.btn--sm {
+.o-btn--sm {
 	font-size: (14/16)+rem;
 	padding: quarter($global-spacing-unit) $global-spacing-unit;
 }
