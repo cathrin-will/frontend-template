@@ -19,17 +19,24 @@
 
 /* mq helper classes
 ========================================================================== */
-@if (variable-exists(mq-breakpoints)) {
-	@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
-		@include mq($from: $inuit-bp-name) {
-			.u-hidden#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
-				display: none !important;
-				position: absolute;
-			}
-			.text--center#{$inuit-widths-breakpoint-separator}#{$inuit-bp-name} {
-				text-align: center !important;
-			}
-		}
+
+@include mq($from: desk) {
+	.u-hidden#{$inuit-widths-breakpoint-separator}desk {
+		display: none !important;
+		position: absolute;
+	}
+	.u-text--center#{$inuit-widths-breakpoint-separator}desk {
+		text-align: center !important;
+	}
+}
+
+@include mq($until: tablet) {
+	.u-hidden#{$inuit-widths-breakpoint-separator}palm {
+		display: none !important;
+		position: absolute;
+	}
+	.u-text--center#{$inuit-widths-breakpoint-separator}palm {
+		text-align: center !important;
 	}
 }
 
@@ -38,7 +45,7 @@
 ========================================================================== */
 // colours maps in settings/_vars.scss
 @each $color, $hex in $bg-colors {
-	.bg--#{$color} {
+	.u-bg--#{$color} {
 		background-color: #{$hex} !important;
 	}
 }

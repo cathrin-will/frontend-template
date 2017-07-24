@@ -1,65 +1,6 @@
-<!DOCTYPE html>
-<html lang="en"  class="no-js">
-<head itemscope itemtype="http://schema.org/Website">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home | Website</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
-	<meta name="keywords" content="" />
-
-	<!-- Mobile UI  -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="">
-
-	<!-- Chrome & Firefox OS -->
-	<meta name="theme-color" content="#000000">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#000000">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-	<!--  Google+ share tags-->
-	<meta itemprop="name" content="">
-	<meta itemprop="description" content="">
-	<meta itemprop="image" content="">
-
-	<!-- Open Graph data -->
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content=""/>
-	<meta property="og:site_name" content="" />
-
-	<!-- Twitter Card data -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@">
-	<meta name='twitter:url' content='' />
-	<meta name="twitter:title" content="">
-	<meta name="twitter:description" content="Page description less than 200 characters">
-	<meta name="twitter:image" content=""><!-- Twitter Summary card images must be at least 120x120px -->
-
-	<!-- preloaders -->
-	<!-- <link rel="preload" href="http://via.placeholder.com/7900x2000" as="image"> -->
-
-	<!--  Styles -->
-	<link rel="stylesheet" href="/dist/css/main.css"/>
-
-	<!-- <link rel="canonical" href="" /> -->
-	<link rel="shortcut icon" href="/favicon.ico">
-
-	<!-- Touch/favicons: use http://realfavicongenerator.net/ -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-
-	<!-- Modernizr -->
-	<script src="/dist/js/vendor/modernizr-custom.min.js"></script>
-
-</head>
+<?php include("inc/head.php"); ?>
+<body>
+	<?php include("inc/header.php"); ?>
 
 <style>
 	.o-wrapper {
@@ -72,14 +13,14 @@
 <body>
 	<?php include("inc/header.php"); ?>
 	<div class="o-wrapper">
-		<h1 class="text--center">XXX styleguide</h1>
-		<p class="lede">This is the  <strong>XXX</strong> style guide, detailing the components and variables that make up the entirety of the site. They are designed to be as generic (and therefore re-usable) as possible.</p>
+		<h1 class="u-text--center">XXX styleguide</h1>
+		<p>This is the  <strong>XXX</strong> style guide, detailing the components and variables that make up the entirety of the site. They are designed to be as generic (and therefore re-usable) as possible.</p>
 		<p> The site is responsive and built using <a href="http://sass-lang.com/">SASS</a> and the <a href="https://github.com/inuitcss/inuitcss">Inuit Beta framework</a> to create modular components with <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM</a> syntax.</p>
 		<p>All variables are defined in: <code>_settings.global.scss</code>.</p>
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-layout">
-		<h2 class="text--center">Layout structure</h2>
+		<h2 class="u-text--center">Layout structure</h2>
 		<p>The Inuit layout framework has classes based on ratios such as <code>.u-1/2</code> or <code>.u-1/3</code>, allowing for flexible sizes and nesting where required. the amount of columns can be turned on or off. The layout is mobile-first, so unless a width class is declared, the layout item shall be full width (same as specifying the class of <code>.u-1/1</code>). to target specific media queries add @ and the media item in question, so for instance <code>.u-1/2@desk</code> or <code>.u-1/3@retina</code> or <code>.u-1/5@xl</code></p>
 		<p>In addition there is push and pulls to reset any leftover or conflicting left/right values. e.g u-push-1/2 these can also be media query specifc</p>
 		<p>The breakpoints can be custom defined and added or removed, for this project they are:</p>
@@ -90,42 +31,42 @@
 			<li>desk:		1200px</li>
 		</ul>
 		<p>The spacing of layout items (and much more throughtout the site) is based on the variable <code>$global-spacing-unit</code>, for this project it is 24px.</p>
-		<div class="o-layout text--center">
+		<div class="o-layout u-text--center">
 			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
-				<p class="bg--ash u-mb-"> 1/4</p>
+				<p class="u-bg--ash u-mb-"> 1/4</p>
 			</div>
 			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
-				<p class="bg--ash u-mb-"> 1/4</p>
+				<p class="u-bg--ash u-mb-"> 1/4</p>
 			</div>
 			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
-				<p class="bg--ash u-mb-"> 1/4</p>
+				<p class="u-bg--ash u-mb-"> 1/4</p>
 			</div>
 			<div class="o-layout__item u-1/4 u-1/2@tablet u-1/4@lap">
-				<p class="bg--ash u-mb-"> 1/4</p>
+				<p class="u-bg--ash u-mb-"> 1/4</p>
 			</div>
 			<div class="o-layout__item u-1/3@lap">
-				<p class="bg--ash u-mb-"> 1/3</p>
+				<p class="u-bg--ash u-mb-"> 1/3</p>
 			</div>
 			<div class="o-layout__item u-1/3@lap">
-				<p class="bg--ash u-mb-"> 1/3</p>
+				<p class="u-bg--ash u-mb-"> 1/3</p>
 			</div>
 			<div class="o-layout__item u-1/3@lap">
-				<p class="bg--ash u-mb-"> 1/3</p>
+				<p class="u-bg--ash u-mb-"> 1/3</p>
 			</div>
 			<div class="o-layout__item u-1/2@lap">
-				<p class="bg--ash u-mb-"> 1/2</p>
+				<p class="u-bg--ash u-mb-"> 1/2</p>
 			</div>
 			<div class="o-layout__item u-1/2@lap">
-				<p class="bg--ash u-mb-"> 1/2</p>
+				<p class="u-bg--ash u-mb-"> 1/2</p>
 			</div>
 			<div class="o-layout__item u-1/1 u-mb">
-				<p class="bg--ash u-mb-"> 1</p>
+				<p class="u-bg--ash u-mb-"> 1</p>
 			</div>
 		</div><!-- /o-layout -->
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-helper">
-		<h2 class="text--center">Helper classes</h2>
+		<h2 class="u-text--center">Helper classes</h2>
 		<p> There are a wide range of helper classes, which are set in <code>_settings.global.scss</code> and  <code>utilities.helper.scss</code></p>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/2@lap  u-1/2@desk">
@@ -154,7 +95,7 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper" id="sg-typography">
-		<h2 class="text--center">Typography</h2>
+		<h2 class="u-text--center">Typography</h2>
 		<div class="o-layout">
 			<div class="o-layout__item  u-1/2@desk">
 				<h3 class="text--red">Headings</h3>
@@ -170,13 +111,10 @@
 			<div class="o-layout__item  u-1/2@desk">
 				<h3 class="text--red">Typography helper classes <code>utilities.typography</code></h3>
 				<ul>
-					<li><p class="caps">.caps</p></li>
-					<li><p class="text--right">.text--right</p></li>
-					<li><p class="text--justify">.text--justify -  need more words to show this working</p></li>
-					<li><p class="text--center">.text--center</p></li>
-					<li><p class="text--blue">.text--blue</p></li>
-					<li><p class="text--red">.text--red</p></li>
-					<li><p class="text--white  bg--charcoal u-p-">.text--white</p></li>
+					<li><p class="u-text--up">.u-text--up</p></li>
+					<li><p class="u-text--right">.u-text--right</p></li>
+					<li><p class="u-text--justify">.u-text--justify -  need more words to show this working</p></li>
+					<li><p class="u-u-text--center">.u-u-text--center</p></li>
 				</ul>
 				<p>16px Helvetica $charcoal <strong>bold text</strong> Lorem ipsum dolor sit amet, <em>italic text</em> adipisicing elit. Obcaecati, adipisci placeam.</p>
 				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, adipisci placeat deleniti laboriosam sapiente in minus culpa eius omnis distinctio recusandae alias dolores et vel atque amet molestiae esse dolorem.</p>
@@ -185,45 +123,45 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-colors">
-		<h2 class="text--center">Colour Palette <code>settings.global</code></h2>
+		<h2 class="u-text--center">Colour Palette <code>settings.global</code></h2>
 		<p>The official XXX colours</p>
-		<p>There are two maps in <code>settings.global</code> to set up helper classes <code>.bg--[colour name]</code> and <code>.text--[colour name]</code>  only those added to the map will be generated</p>
+		<p>There are two maps in <code>settings.global</code> to set up helper classes <code>.u-bg--[colour name]</code> and <code>.text--[colour name]</code>  only those added to the map will be generated</p>
 		<div class="o-layout">
 			<div class="o-layout__item">
 				<h3>Greys </h3>
 				<p class="u-pb">Grey colours used throughout the site</p>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--ash  u-mb u-pt++">
-					<div class="u-p- text--center bg--ash">
+				<div class="u-bg--ash  u-mb u-pt++">
+					<div class="u-p- u-text--center u-bg--ash">
 						<p class="u-mv0">$ash</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--light-grey  u-mb u-pt++">
-					<div class="u-p- text--center bg--ash">
+				<div class="u-bg--light-grey  u-mb u-pt++">
+					<div class="u-p- u-text--center u-bg--ash">
 						<p class="u-mv0">$light-grey</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--mid-grey  u-mb u-pt++">
-					<div class="u-p- text--center bg--ash">
+				<div class="u-bg--mid-grey  u-mb u-pt++">
+					<div class="u-p- u-text--center u-bg--ash">
 						<p class="u-mv0">$mid-grey</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--dark-grey  u-mb u-pt++">
-					<div class="u-p- text--center bg--ash">
+				<div class="u-bg--dark-grey  u-mb u-pt++">
+					<div class="u-p- u-text--center u-bg--ash">
 						<p class="u-mv0">$dark-grey</p>
 					</div>
 				</div>
 			</div>
 			<div class="o-layout__item  u-1/4@lap u-1/4@desk  u-1/2">
-				<div class="bg--charcoal  u-mb u-pt++">
-					<div class="u-p- text--center bg--ash">
+				<div class="u-bg--charcoal  u-mb u-pt++">
+					<div class="u-p- u-text--center u-bg--ash">
 						<p class="u-mv0">$charcoal</p>
 					</div>
 				</div>
@@ -232,7 +170,7 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper" id="sg-buttons">
-		<h2 class="text--center">Buttons <code>objects.buttons</code></h2>
+		<h2 class="u-text--center">Buttons <code>objects.buttons</code></h2>
 		<p>Class of <code>.btn</code> can be added to anchor, span or button elements, including inputs however they will not support having an icon inside.</p>
 		<p> Always start with a class of <code>.btn</code> then add helper classes such as <code>.btn--red, .btn--grey, .btn--sm, .btn--lg</code> adding a class of <code>.u-1/1</code> will make a button full length. The one exception is <code>.btn-bare</code> which should not be used with any other btn classes.</p>
 		<div class="o-layout">
@@ -264,7 +202,7 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper" id="sg-icons">
-		<h2 class="text--center">Icons <code>objects.icons</code></h2>
+		<h2 class="u-text--center">Icons <code>objects.icons</code></h2>
 		<p>We make use of <a href="https://icomoon.io/app/#/select">icomoon</a> for icons, when they need to be changed/added/removed go the icomoon and import the <code>selection.json</code> file to see whats currently being used, after you're done don't forget to update the json file.</p>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/4@lap u-1/4@desk  u-1/2  u-mb">
@@ -298,7 +236,7 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-lists">
-		<h2 class="text--center">Lists <code>objects.lists</code></h2>
+		<h2 class="u-text--center">Lists <code>objects.lists</code></h2>
 		<div class="o-layout">
 			<div class="o-layout__item u-1/2@lap u-1/4@desk">
 				<p><strong><code>.o-list-bare</code></strong></p>
@@ -336,7 +274,7 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-table">
-		<h2 class="text--center">Tables <code>objects.table</code></h2>
+		<h2 class="u-text--center">Tables <code>objects.table</code></h2>
 		<h3>Standard Table: <code>table</code></h3>
 		<table class="table">
 			<thead>
@@ -371,34 +309,34 @@
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-images">
-		<h2 class="text--center">images <code>objects.images</code></h2>
+		<h2 class="u-text--center">images <code>objects.images</code></h2>
 		<p>some examples showing images next to and around text depending on position</p>
 		<p><code>.img--left .img--right .center</code></p>
 		<div>
-			<img src="http://placehold.it/350x150" alt="placeholder" class="img--left">
+			<img src="http://placehold.it/350x150" alt="placeholder" class="u-img--left">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		</div>
 		<div>
-			<img src="http://placehold.it/350x150" alt="placeholder" class="img--right">
+			<img src="http://placehold.it/350x150" alt="placeholder" class="u-img--right">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae est facere enim ea reiciendis nemo porro, veritatis, ratione nostrum! Necessitatibus ad consequatur at nemo expedita voluptatum. Adipisci aspernatur aperiam dolores.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati iusto quos, maiores qui ipsam omnis accusamus perspiciatis totam, neque doloribus doloremque error laboriosam eius sunt ducimus porro suscipit voluptas consequuntur.</p>
 		</div>
 		<div>
-			<img src="http://placehold.it/350x150" alt="placeholder" class="img--center">
+			<img src="http://placehold.it/350x150" alt="placeholder" class="u-img--center">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deserunt qui nam aspernatur cupiditate dignissimos vel animi ratione eius. Quos consequuntur iure facere ex ipsum sequi, sunt vel eos reiciendis.</p>
 		</div>
 	</div><!-- /.wrapper -->
 
 	<div class="o-wrapper"  id="sg-forms">
-		<h2 class="text--center">Forms <code>objects.form</code></h2>
-		<form action="#" class="form" id="form">
+		<h2 class="u-text--center">Forms <code>objects.form</code></h2>
+		<form action="#" class="o-form" id="form">
 			<div class="o-layout">
-				<div class="o-layout__item u-mb- u-1/4@lap text--right">
+				<div class="o-layout__item u-mb- u-1/4@lap u-text--right">
 					<label for="select">Label Select</label>
 				</div>
 				<div class="o-layout__item u-mb- u-3/4@lap">
@@ -408,13 +346,13 @@
 						<option value="text">text</option>
 					</select>
 				</div>
-				<div class="o-layout__item u-mb- u-1/4@lap text--right">
+				<div class="o-layout__item u-mb- u-1/4@lap u-text--right">
 					<label for="input">Label input</label>
 				</div>
 				<div class="o-layout__item u-mb- u-3/4@lap">
 					<input type="text" name="input" id="input" placeholder="placeholder" class="u-1/2@lap">
 				</div>
-				<div class="o-layout__item u-mb- u-1/4@lap text--right">
+				<div class="o-layout__item u-mb- u-1/4@lap u-text--right">
 					<label for="textarea">Label textarea</label>
 				</div>
 				<div class="o-layout__item u-mb- u-3/4@lap">
@@ -423,13 +361,7 @@
 			</div>
 		</form>
 	</div><!-- /.wrapper -->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="/dist/js/vendor/jquery.min.js"><\/script>')</script>
-	<script src="/dist/js/main.min.js"></script>
-	<script>
-		console.warn("No GA tracking code added");
-	</script>
-
+	<?php include("inc/cookie.php");  include("inc/footer.php");include("inc/scripts.php"); ?>
 </body>
 </html>
+

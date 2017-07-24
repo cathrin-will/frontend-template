@@ -2,12 +2,12 @@
 	#Typography - helpers
 \*------------------------------------*/
 
-.caps { text-transform: uppercase !important; }
-.text--right { text-align: right !important; }
-.text--center { text-align: center !important; }
-.text--left { text-align: left !important; }
+.u-text--up { text-transform: uppercase !important; }
+.u-text--right { text-align: right !important; }
+.u-text--center { text-align: center !important; }
+.u-text--left { text-align: left !important; }
 
-.text--justify {
+.u-text--justify {
 	text-align: justify;
 
 	&:after {
@@ -22,7 +22,7 @@
 // colours map in settings.vars
 //	creates .bg--purple ... bg--lime vars can be found in settings.vars
 @each $color, $hex in $text-colors {
-	.text--#{$color} {
+	.u-text--#{$color} {
 		color: #{$hex} !important;
 	}
 }
