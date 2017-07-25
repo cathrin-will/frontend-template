@@ -43,6 +43,7 @@
 			pathVal = pathVal.replace(/^(file:)/g, ''); // starting with file
 			pathVal = pathVal.replace(/^(\\)*/g, ''); // starting with slashes
 			pathVal = pathVal.replace(/^(bas1|BAS1)/g, 'smb://bas1'); //starting with bas1 || BAS1
+			pathVal = pathVal.replace(/^(:)/g, 'smb://bas1/5_Client Accounts/'); // starting with : thanks marge
 			pathVal = pathVal.replace(/\\/g, '/'); // change slash direction
 			pathVal = pathVal.replace(/^(5_Client Accounts)/g, 'smb://bas1/5_Client Accounts/');  //if it starts with client
 			pathVal = pathVal.replace(/^(Client Accounts)/g, 'smb://bas1/5_Client Accounts/');  //if it starts with client
