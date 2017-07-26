@@ -26,3 +26,15 @@
 		color: #{$hex} !important;
 	}
 }
+
+@include mq($from: desk) {
+	.u-text--center#{$inuit-widths-breakpoint-separator}desk {
+		text-align: center !important;
+	}
+}
+
+@include mq($until: tablet) {
+	.u-text--center#{$inuit-widths-breakpoint-separator}palm {
+		text-align: center !important;
+	}
+}

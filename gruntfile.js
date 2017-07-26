@@ -184,6 +184,9 @@ module.exports = function(grunt) {
 				options: {
 					watchTask: true,
 					proxy: "fe.dev"
+					// server: {
+					// 	baseDir: "/"
+					// }
 				}
 			}
 		}
