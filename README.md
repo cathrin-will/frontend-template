@@ -64,9 +64,3 @@ To open site in browser and refresh as you code
 ## Browser Support
 *
 
-<!-- ## CMS
-can be found: /site-cms
-
-## Credentials Link
-
-https://credentials.purple-agency.net/ -->
